@@ -2,7 +2,7 @@ namespace dtos {
   class AreaManager {
     public: 
       //Constructor default
-      AreaManager();
+      AreaManager(int age);
       //functions
       void setAge(int age);
     private:

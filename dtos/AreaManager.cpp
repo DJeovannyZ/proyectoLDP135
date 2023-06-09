@@ -1,7 +1,9 @@
 #include "AreaManager.h"
 namespace dtos {
 // Implementation Constructor default
-AreaManager::AreaManager() {}
+AreaManager::AreaManager(int age) {
+    this->age = age;
+}
 
 //Implementation function setAge
   void AreaManager::setAge(int age) {
