@@ -14,19 +14,6 @@ Employee::Employee(std::string name, std::string lastName, std::string address,
     this->bornMonth = bornMonth;
     this->bornYear = bornYear;
 }
-Employee::Employee(std::string name, std::string lastName, std::string address,
-                   std::string phoneNumber, char gender, int bornDay,
-                   int bornMonth, int bornYear) {
-    this->name = name;
-    this->lastName = lastName;
-    this->address = address;
-    this->phoneNumber = phoneNumber;
-    this->salary = 350;
-    this->gender[0] = gender;
-    this->bornDay = bornDay;
-    this->bornMonth = bornMonth;
-    this->bornYear = bornYear;
-}
 
 // Getters
 std::string Employee::getName() { return this->name; }

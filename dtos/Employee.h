@@ -4,7 +4,6 @@ namespace dtos {
         public:
             //Constructor
             Employee(std::string name, std::string lastName, std::string addres, std::string phoneNumber, float salary, char gender, int bornDay, int bornMonth, int bornYear);
-            Employee(std::string name, std::string lastName, std::string addres, std::string phoneNumber, char gender, int bornDay, int bornMonth, int bornYear);
 
             //Getters
             std::string getName();

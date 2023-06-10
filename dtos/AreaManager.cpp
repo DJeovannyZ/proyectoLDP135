@@ -1,12 +1,11 @@
 #include "AreaManager.h"
 namespace dtos {
-// Implementation Constructor default
-AreaManager::AreaManager(int age) {
-    this->age = age;
+AreaManager::AreaManager(std::string name, std::string lastName,
+                         std::string addres, std::string phoneNumber,
+                         float salary, char gender, int bornDay, int bornMonth,
+                         int bornYear, std::string area)
+    : Employee(name, lastName, addres, phoneNumber, salary, gender, bornDay,
+               bornMonth, bornYear) {
+    this->area = area;
 }
-
-//Implementation function setAge
-  void AreaManager::setAge(int age) {
-    this->age = age;
-  }
 } // namespace dtos

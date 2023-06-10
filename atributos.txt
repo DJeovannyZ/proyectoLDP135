@@ -15,3 +15,9 @@ Supervisor
 Gerente
 
 Tecnico
+
+
+vista > menu > ordenar por orden alfabtico > controlador > modelo > Employee 
+
+
+Investigar vector, biblioteca para ordenar por string
