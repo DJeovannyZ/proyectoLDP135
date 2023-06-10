@@ -1,0 +1,31 @@
+Propiedades Generales:
+nombre - string
+apellido - string
+direccion - string
+telefono - int[8]
+genero -char[1]
+fecha de nacimiento ¿? //time.h // int separado
+salario float//solo dos decimales y no redondeo
+
+Jefe de area
+nombre de area string
+
+Supervisor
+
+Gerente
+
+Tecnico
+
+FUNCIONES
+LEER ARCHIVO
+CALCULAR LA RENTA
+CALCULAR AFP
+CALCULAR ISSS
+----------------
+MENU
+1. ORDENAR EMPLEADOS POR APELLIDO DE A-Z
+2. ORDENAR EMPLEADOS POR SUELDO CON DESCUENTOS
+2.1 DE MAYOR A MENOR
+2.2 DE MENOR A MAYOR
+3. CANTIDAD DE EMPLEADO SEGUN ROL : SUPERVISOR 
+4. AGREGAR EMPLEADOS : 
