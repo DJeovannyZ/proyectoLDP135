@@ -1,0 +1,4 @@
+ID, Name, LastName, AddressEmployee, PhoneNumber, Salary, Gender, BornDay, BornMonth, BornYear, Area
+00001, Mauricio, Castillo, Santa Ana, 78251548, 1500.00, M, 4, 12, 1990, Atencion al Cliente
+00002, Karina, Martinez, San Salvador, 65782145, 1550.00, F, 15, 06, 1996, Publicidad
+00003, Gerardo, Rivera, Santa Ana, 70996588,1675.00, M, 24, 09, 1995, Ventas
