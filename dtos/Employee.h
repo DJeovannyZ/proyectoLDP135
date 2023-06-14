@@ -3,7 +3,7 @@ namespace dtos {
     class Employee {
         public:
             //Constructor
-            Employee(std::string name, std::string lastName, std::string addres, std::string phoneNumber, float salary, char gender, int bornDay, int bornMonth, int bornYear);
+            Employee(int ID, std::string name, std::string lastName, std::string addres, std::string phoneNumber, float salary, char gender, int bornDay, int bornMonth, int bornYear);
 
             //Getters
             std::string getName();
@@ -12,9 +12,11 @@ namespace dtos {
             std::string getPhoneNumber();
             float getSalary();
             char getGender();
+            int getID();
             int getBornDay();
             int getBornMonth();
             int getBornYear();
+
 
             //setters
             void setName(std::string name);
@@ -23,6 +25,7 @@ namespace dtos {
             void setPhoneNumber(std::string phoneNumber);
             void setSalary(float salary);
             void setGender(char gender);
+            void setID(int ID);
             void setBornDay(int bornDay);
             void setBornMonth(int bornMonth);
             void setBornYear(int bornYear);
@@ -32,6 +35,6 @@ namespace dtos {
             float salary;
             char gender[1];
             // bornDateEmployee
-            int bornDay, bornMonth, bornYear;
+            int ID, bornDay, bornMonth, bornYear;
     };
 } 

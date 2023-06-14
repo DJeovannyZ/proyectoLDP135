@@ -1,9 +1,10 @@
 #include "Employee.h"
 
 namespace dtos {
-Employee::Employee(std::string name, std::string lastName, std::string address,
+Employee::Employee(int ID, std::string name, std::string lastName, std::string address,
                    std::string phoneNumber, float salary, char gender,
                    int bornDay, int bornMonth, int bornYear) {
+    this->ID = ID;
     this->name = name;
     this->lastName = lastName;
     this->address = address;
