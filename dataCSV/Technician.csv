@@ -13,4 +13,4 @@ ID, Name, LastName, AddressEmployee, PhoneNumber, Salary, Gender, BornDay, BornM
 00022, Edwin, Hernandez, Santa Ana, 71015872, 350.00, M, 22, 12, 1999, Redes
 00023, Jorge, Pineda, Santa Ana, 70000122, 350.00, M, 16, 5, 1996, Soporte Tecnico
 00024, Evelin, Alvarado, San Salvador, 76454578, 350.00, F, 23, 10, 1992, Mantenimiento
-00025, Estefani, Zelaya, San Salvador, 71110222, 375.00, F, 1, 11, 1995, Redes
+00025, Estefani, Zelaya, San Salvador, 71110222, 350.00, F, 1, 11, 1995, Redes
