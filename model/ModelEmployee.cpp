@@ -2,7 +2,7 @@
 
 namespace model {
 
-    float calculateRent(dtos::Employee employee){
+    float ModelEmployee::calculateRent(dtos::Employee employee){
         float salary = 0; //cambiar al salario del empleado
         float salaryRent=0;
         float aux=0;
@@ -31,13 +31,14 @@ namespace model {
         }
     }
 
-    float calculateAFP(dtos::Employee employee){
+    float ModelEmployee::calculateAFP(dtos::Employee employee){
         // float salaryAFF=salary*0.0775;
         return;
     }
 
-    float calculateISSS(dtos::Employee employee){
+    float ModelEmployee::calculateISSS(dtos::Employee employee)
+    {
         // float salaryISSS=salary*0.0750;
-        return;
+        return 0.0f;
     }
 }
