@@ -1,16 +1,16 @@
 ID, Name, LastName, AddressEmployee, PhoneNumber, Salary, Gender, BornDay, BornMonth, BornYear, Especializacion
-00011, Jose, Valle, San Salvador, 78030088, 1500.00, M, 17, 5, 2000, Soporte Tecnico
-00012, Roberto, Campos, Santa Ana, 62427858, 1550.00, M, 15, 6, 1998, Mantenimiento
-00013, Francisco, Fernandez, San Salvador, 71128504,1675.00, M, 24, 2, 1999, Redes
-00014, Santos, Ponce, Santa Ana, 75989999, 1500.00, M, 4, 12, 2001, Soporte Tecnico
-00015, Lucas, Martinez, San Salvador, 65782144, 1550.00, M, 15, 6, 1996, Mantenimiento
-00016, Gerardo, Almendares, Santa Ana, 79996570,1500.00, M, 4, 6, 1998, Redes
-00017, Wendy, Cruz, Santa Ana, 74851128, 1500.00, F, 6, 7, 1997, Soporte Tecnico
-00018, Alejandra, Martinez, San Salvador, 71554596, 1550.00, F, 28, 12, 1998, Mantenimiento
-00019, Christian, Diaz, Santa Ana, 79031405, 1675.00, M, 19, 10, 1998, Redes
-00020, Olivia, Quintanilla, San Salvador, 73128562, 1500.00, F, 9, 1, 2001, Soporte Tecnico
-00021, Walter, Serrano, San Salvador, 68547521, 1550.00, M, 15, 06, 1998, Mantenimiento
-00022, Edwin, Hernandez, Santa Ana, 71015872,1675.00, M, 22, 12, 1999, Redes
-00023, Jorge, Pineda, Santa Ana, 70000122, 1500.00, M, 16, 5, 1996, Soporte Tecnico
-00024, Evelin, Alvarado, San Salvador, 76454578, 1550.00, F, 23, 10, 1992, Mantenimiento
-00025, Estefani, Zelaya, San Salvador, 71110222,1675.00, F, 1, 11, 1995, Redes
+00011, Jose, Valle, San Salvador, 78030088, 350.00, M, 17, 5, 2000, Soporte Tecnico
+00012, Roberto, Campos, Santa Ana, 62427858, 350.00, M, 15, 6, 1998, Mantenimiento
+00013, Francisco, Fernandez, San Salvador, 71128504, 375.00, M, 24, 2, 1999, Redes
+00014, Santos, Ponce, Santa Ana, 75989999, 350.00, M, 4, 12, 2001, Soporte Tecnico
+00015, Lucas, Martinez, San Salvador, 65782144, 350.00, M, 15, 6, 1996, Mantenimiento
+00016, Gerardo, Almendares, Santa Ana, 79996570, 350.00, M, 4, 6, 1998, Redes
+00017, Wendy, Cruz, Santa Ana, 74851128, 375.00, F, 6, 7, 1997, Soporte Tecnico
+00018, Alejandra, Martinez, San Salvador, 71554596, 350.00, F, 28, 12, 1998, Mantenimiento
+00019, Christian, Diaz, Santa Ana, 79031405, 350.00, M, 19, 10, 1998, Redes
+00020, Olivia, Quintanilla, San Salvador, 73128562, 400.00, F, 9, 1, 2001, Soporte Tecnico
+00021, Walter, Serrano, San Salvador, 68547521, 400.00, M, 15, 06, 1998, Mantenimiento
+00022, Edwin, Hernandez, Santa Ana, 71015872, 350.00, M, 22, 12, 1999, Redes
+00023, Jorge, Pineda, Santa Ana, 70000122, 350.00, M, 16, 5, 1996, Soporte Tecnico
+00024, Evelin, Alvarado, San Salvador, 76454578, 350.00, F, 23, 10, 1992, Mantenimiento
+00025, Estefani, Zelaya, San Salvador, 71110222, 375.00, F, 1, 11, 1995, Redes
