@@ -1,5 +1,7 @@
 #include <vector>
 #include "../dtos/Employee.h"
+#include <iostream>
+#include <iomanip>//PARA QUE SOLO MUESTRE DOS DECIMALES EN EL SALARIO
 namespace model{
     class ModelEmployee{
 
@@ -14,11 +16,12 @@ namespace model{
 
     std::vector<dtos::Employee> sortByNetSalary(std::vector<dtos::Employee> listEmployees);
 
-    double calculateRent(dtos::Employee employee);
+    float calculateRent(dtos::Employee employee);
 
-    double calculateAFP(dtos::Employee employee);
+    float calculateAFP(dtos::Employee employee);
 
-    double calculateISSS(dtos::Employee employee);
+    float calculateISSS(dtos::Employee employee);
+    
 
 };
 }
