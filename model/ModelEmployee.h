@@ -5,7 +5,6 @@
 namespace model{
     class ModelEmployee{
 
-
     std::vector<dtos::Employee> getListEmployees(std::string pathCSV, int numberAttributes);
 
     dtos::Employee getEmployee(std::string pathCSV, int numberAttributes);
@@ -21,7 +20,8 @@ namespace model{
     float calculateAFP(dtos::Employee employee);
 
     float calculateISSS(dtos::Employee employee);
-    
 
+    float getNetSalary(dtos::Employee employee);
+    
 };
 }
