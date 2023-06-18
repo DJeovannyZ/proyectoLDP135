@@ -2,6 +2,7 @@
 
 namespace dtos {
 
+
 Manager::Manager(int ID, std::string name, std::string lastName, std::string addres,
                  std::string phoneNumber, float salary, char gender,
                  int bornDay, int bornMonth, int bornYear, std::string branch)
@@ -9,6 +10,7 @@ Manager::Manager(int ID, std::string name, std::string lastName, std::string add
                bornMonth, bornYear) {
     this->branch = branch;
 }
+
 
 // getters
 std::string Manager::getBranch() { return this->branch; }

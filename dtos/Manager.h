@@ -4,6 +4,7 @@
 namespace dtos {
 class Manager : public Employee {
   public:
+    Manager();
     Manager(int ID, std::string name, std::string lastName, std::string addres,
             std::string phoneNumber, float salary, char gender, int bornDay,
             int bornMonth, int bornYear, std::string branch);

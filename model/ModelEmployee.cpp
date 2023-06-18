@@ -26,26 +26,49 @@ std::vector<std::string> ModelEmployee::getValues(std::string pathCSV) {
     return values;
 }
 
-std::vector<dtos::Manager> ModelEmployee::getListManagers(std::string pathCSV) {
+void ModelEmployee::setValuesEmployee(std::string pathCSV,
+                                      dtos::Employee *employee) {
 
     std::vector<std::string> values = getValues(pathCSV);
     std::vector<dtos::Manager> listManagers;
-    for(int i = 0; i< values.size(); i++){
-        int ID = std::stoi(values[0]);    
+    for (int i = 0; i < values.size(); i++) {
+        int ID = std::stoi(values[0]);
         std::string name = values[1];
         std::string lastName = values[2];
         std::string addres = values[3];
         std::string phoneNumber = values[4];
         float salary = std::stof(values[5]);
         char gender = values[6][0];
-        int bornDay = std::stoi(values[7]);    
-        int bornMonth = std::stoi(values[8]);    
-        int bornYear = std::stoi(values[9]);    
+        int bornDay = std::stoi(values[7]);
+        int bornMonth = std::stoi(values[8]);
+        int bornYear = std::stoi(values[9]);
         std::string branch = values[10];
-        dtos::Manager manager(ID, name, lastName, addres, phoneNumber, salary, gender, bornDay, bornMonth, bornYear, branch); 
+
+        employee->setID(ID);
+        employee->setName(name);
+        employee->setLastName(lastName);
+        employee->setAddress(addres);
+        employee->setPhoneNumber(phoneNumber);
+        employee->setSalary(salary);
+        employee->setGender(gender);
+        employee->setBornDay(bornDay);
+        employee->setBornMonth(bornMonth);
+        employee->setBornYear(bornYear);
+    }
+}
+
+std::vector<dtos::Manager> ModelEmployee::getListManagers(std::string pathCSV) {
+
+    std::vector<std::string> values = getValues(pathCSV);
+    std::vector<dtos::Manager> listManagers;
+    for (int i = 0; i < values.size(); i++) {
+        dtos::Manager manager;
+        std::string branch = values[10];
+        setValuesEmployee(pathCSV, &manager);
+        manager.setBranch(branch);
         listManagers.push_back(manager);
     }
-    return listManagers; 
+    return listManagers;
 }
 
 float ModelEmployee::calculateRent(dtos::Employee employee) {
