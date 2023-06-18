@@ -1,3 +1,4 @@
+#Linux: 
 g++ main.cpp \
     model/ModelEmployee.cpp \
     dtos/Employee.cpp \
@@ -8,3 +9,6 @@ g++ main.cpp \
     controller/ControllerEmployee.cpp \
     view/view.cpp \
     -o main
+
+#WIndows: 
+g++ main.cpp model/ModelEmployee.cpp dtos/Employee.cpp dtos/Manager.cpp dtos/AreaManager.cpp dtos/Supervisor.cpp dtos/Technician.cpp controller/ControllerEmployee.cpp view/view.cpp -o main.exe
