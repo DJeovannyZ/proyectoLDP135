@@ -177,12 +177,12 @@ float ModelEmployee::calculateISSS(dtos::Employee employee) {
     return discountISSS;
 }
 
-float ModelEmployee::getNetSalary(dtos::Employee employee) {
+void ModelEmployee::setNetSalary(dtos::Employee *employee) {
     float netSalary;
 
-    netSalary = employee.getSalary() - calculateRent(employee) -
-                calculateAFP(employee) - calculateISSS(employee);
-    return netSalary;
+    netSalary = employee->getSalary() - calculateRent(*employee) -
+                calculateAFP(*employee) - calculateISSS(*employee);
+    employee->setNetSalary(netSalary);
 }
 
 } // namespace model

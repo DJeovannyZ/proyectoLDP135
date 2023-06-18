@@ -16,6 +16,7 @@ namespace dtos {
         std::string getAddress();
         std::string getPhoneNumber();
         float getSalary();
+        float getNetSalary();
         char getGender();
         int getID();
         int getBornDay();
@@ -28,6 +29,7 @@ namespace dtos {
         void setAddress(std::string address);
         void setPhoneNumber(std::string phoneNumber);
         void setSalary(float salary);
+        void setNetSalary(float netSalary);
         void setGender(char gender);
         void setID(int ID);
         void setBornDay(int bornDay);
@@ -36,7 +38,7 @@ namespace dtos {
 
     private:
         std::string name, lastName, address, phoneNumber;
-        float salary;
+        float salary, netSalary;
         char gender;
         int ID, bornDay, bornMonth, bornYear;
     };

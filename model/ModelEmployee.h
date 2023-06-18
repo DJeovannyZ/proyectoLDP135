@@ -39,6 +39,7 @@ class ModelEmployee {
     std::vector<dtos::Employee>
     sortByLastName(std::vector<dtos::Employee> listEmployees);
 
+
     std::vector<dtos::Employee>
     sortByNetSalary(std::vector<dtos::Employee> listEmployees, bool ascending);
 
@@ -48,7 +49,7 @@ class ModelEmployee {
 
     float calculateISSS(dtos::Employee employee);
 
-    float getNetSalary(dtos::Employee employee);
+    void setNetSalary(dtos::Employee* employee);
 };
 } // namespace model
 #endif // MODELEMPLOYEE_H
