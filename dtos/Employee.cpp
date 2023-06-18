@@ -1,6 +1,7 @@
 #include "Employee.h"
 
 namespace dtos {
+Employee::Employee(){}
 Employee::Employee(int ID, std::string name, std::string lastName, std::string address,
                    std::string phoneNumber, float salary, char gender,
                    int bornDay, int bornMonth, int bornYear) {
@@ -28,6 +29,10 @@ int Employee::getBornMonth() { return this->bornMonth; }
 int Employee::getBornYear() { return this->bornYear; }
 
 // Setters
+void Employee::setID(int ID){
+    this->ID = ID;
+}
+
 void Employee::setName(std::string name){
     this->name = name;
 }

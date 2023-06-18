@@ -11,6 +11,8 @@ Manager::Manager(int ID, std::string name, std::string lastName, std::string add
     this->branch = branch;
 }
 
+Manager::Manager(){}
+
 
 // getters
 std::string Manager::getBranch() { return this->branch; }
