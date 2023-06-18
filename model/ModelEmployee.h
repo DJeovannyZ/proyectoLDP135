@@ -1,3 +1,5 @@
+#ifndef MODELEMPLOYEE_H
+#define MODELEMPLOYEE_H
 #include <vector>
 #include "../dtos/Employee.h"
 #include "../dtos/Manager.h"
@@ -40,3 +42,4 @@ public:
     
 };
 }
+#endif // MODELEMPLOYEE_H
