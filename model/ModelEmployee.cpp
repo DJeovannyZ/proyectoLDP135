@@ -26,14 +26,26 @@ std::vector<std::string> ModelEmployee::getValues(std::string pathCSV) {
     return values;
 }
 
-std::vector<dtos::Employee> ModelEmployee::getListManagers(std::string pathCSV) {
+std::vector<dtos::Manager> ModelEmployee::getListManagers(std::string pathCSV) {
 
     std::vector<std::string> values = getValues(pathCSV);
-    
+    std::vector<dtos::Manager> listManagers;
     for(int i = 0; i< values.size(); i++){
-
+        int ID = std::stoi(values[0]);    
+        std::string name = values[1];
+        std::string lastName = values[2];
+        std::string addres = values[3];
+        std::string phoneNumber = values[4];
+        float salary = std::stof(values[5]);
+        char gender = values[6][0];
+        int bornDay = std::stoi(values[7]);    
+        int bornMonth = std::stoi(values[8]);    
+        int bornYear = std::stoi(values[9]);    
+        std::string branch = values[10];
+        dtos::Manager manager(ID, name, lastName, addres, phoneNumber, salary, gender, bornDay, bornMonth, bornYear, branch); 
+        listManagers.push_back(manager);
     }
-    
+    return listManagers; 
 }
 
 float ModelEmployee::calculateRent(dtos::Employee employee) {
