@@ -12,11 +12,11 @@ namespace model {
 class ModelEmployee {
 
   public:
-    std::vector<std::string> getValues(std::string pathCSV);
+    std::vector<std::vector<std::string>> getValues(std::string pathCSV);
 
-    void setValuesEmployee(std::string pathCSV, dtos::Employee *employee);
+    void setValuesEmployee(std::vector<std::string> valuesEmployee, dtos::Employee *employee);
 
-    std::vector<dtos::Employee> getListEmployees(std::string pathCSV);
+    std::vector<dtos::Employee> getListEmployees(std::vector<std::string> listPathCSV);
 
     std::vector<dtos::Manager> getListManagers(std::string pathCSV);
 
@@ -26,15 +26,21 @@ class ModelEmployee {
 
     std::vector<dtos::Technician> getListTechnicians(std::string pathCSV);
 
-    dtos::Employee getEmployee(std::string pathCSV, int numberAttributes);
-
     int getCountEmployees(std::vector<dtos::Employee> listEmployees);
+
+    int getCountManagers(std::vector<dtos::Manager> listManagers);
+
+    int getCountAreaManagers(std::vector<dtos::AreaManager> listAreaManagers);
+
+    int getCountSupervisors(std::vector<dtos::Supervisor> listSupervisors);
+
+    int getCountTechnicians(std::vector<dtos::Technician> listTechnicians);
 
     std::vector<dtos::Employee>
     sortByLastName(std::vector<dtos::Employee> listEmployees);
 
     std::vector<dtos::Employee>
-    sortByNetSalary(std::vector<dtos::Employee> listEmployees);
+    sortByNetSalary(std::vector<dtos::Employee> listEmployees, bool ascending);
 
     float calculateRent(dtos::Employee employee);
 

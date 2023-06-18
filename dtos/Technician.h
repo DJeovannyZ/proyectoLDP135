@@ -5,6 +5,7 @@
 namespace dtos{
 class Technician : public Employee {
   public:
+    Technician();
     Technician(int ID, std::string name, std::string lastName, std::string addres,
             std::string phoneNumber, float salary, char gender, int bornDay,
             int bornMonth, int bornYear, std::string specialization);
