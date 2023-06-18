@@ -1,9 +1,43 @@
 #include "ModelEmployee.h"
+#include <fstream>
+#include <iostream>
 
 namespace model {
 
+std::vector<std::string> ModelEmployee::getValues(std::string pathCSV) {
+
+    std::vector<std::string> values;
+    std::ifstream fileCSV(pathCSV);
+    if (fileCSV.is_open()) {
+        std::string line;
+        std::getline(fileCSV, line); // ignorar la primera linea
+        while (std::getline(fileCSV, line)) {
+            std::stringstream ss(line);
+            std::string valor;
+            while (std::getline(ss, valor, ',')) {
+                values.push_back(valor);
+            }
+            return values;
+        }
+        fileCSV.close();
+    } else {
+        std::cout << "No se pudo abrir el archivo." << std::endl;
+    }
+    return values;
+}
+
+std::vector<dtos::Employee> ModelEmployee::getListManagers(std::string pathCSV) {
+
+    std::vector<std::string> values = getValues(pathCSV);
+    
+    for(int i = 0; i< values.size(); i++){
+
+    }
+    
+}
+
 float ModelEmployee::calculateRent(dtos::Employee employee) {
-    float salary = employee.getSalary(); 
+    float salary = employee.getSalary();
     float salaryRent = 0;
     float aux = 0;
     if (salary <= 472) {
@@ -27,6 +61,7 @@ float ModelEmployee::calculateRent(dtos::Employee employee) {
             }
         }
     }
+    return salaryRent;
 }
 
 float ModelEmployee::calculateAFP(dtos::Employee employee) {
@@ -44,9 +79,8 @@ float ModelEmployee::calculateISSS(dtos::Employee employee) {
 float ModelEmployee::getNetSalary(dtos::Employee employee) {
     float netSalary;
 
-    netSalary = employee.getSalary() - ModelEmployee::calculateRent(employee) -
-                ModelEmployee::calculateAFP(employee) -
-                ModelEmployee::calculateISSS(employee);
+    netSalary = employee.getSalary() - calculateRent(employee) -
+                calculateAFP(employee) - calculateISSS(employee);
     return netSalary;
 }
 

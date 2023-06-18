@@ -1,11 +1,26 @@
 #include <vector>
 #include "../dtos/Employee.h"
+#include "../dtos/Manager.h"
+#include "../dtos/AreaManager.h"
+#include "../dtos/Supervisor.h"
+#include "../dtos/Technician.h"
 #include <iostream>
 #include <iomanip>//PARA QUE SOLO MUESTRE DOS DECIMALES EN EL SALARIO
 namespace model{
     class ModelEmployee{
 
-    std::vector<dtos::Employee> getListEmployees(std::string pathCSV, int numberAttributes);
+public:
+    std::vector<std::string> getValues(std::string pathCSV);
+
+    std::vector<dtos::Employee> getListEmployees(std::string pathCSV);
+
+    std::vector<dtos::Manager> getListManagers(std::string pathCSV);
+
+    std::vector<dtos::AreaManager> getListAreaManagers(std::string pathCSV);
+
+    std::vector<dtos::Supervisor> getListSupervisors(std::string pathCSV);
+
+    std::vector<dtos::Technician> getListTechnicians(std::string pathCSV);
 
     dtos::Employee getEmployee(std::string pathCSV, int numberAttributes);
 

@@ -10,7 +10,7 @@ Employee::Employee(int ID, std::string name, std::string lastName, std::string a
     this->address = address;
     this->phoneNumber = phoneNumber;
     this->salary = salary;
-    this->gender[0] = gender;
+    this->gender = gender;
     this->bornDay = bornDay;
     this->bornMonth = bornMonth;
     this->bornYear = bornYear;
@@ -19,10 +19,10 @@ Employee::Employee(int ID, std::string name, std::string lastName, std::string a
 // Getters
 std::string Employee::getName() { return this->name; }
 std::string Employee::getLastName() { return this->lastName; }
-std::string Employee::getAddres() { return this->address; }
+std::string Employee::getAddress() { return this->address; }
 std::string Employee::getPhoneNumber() { return this->phoneNumber; }
 float Employee::getSalary() { return this->salary; }
-char Employee::getGender() { return this->gender[0]; }
+char Employee::getGender() { return this->gender; }
 int Employee::getBornDay() { return this->bornDay; }
 int Employee::getBornMonth() { return this->bornMonth; }
 int Employee::getBornYear() { return this->bornYear; }
@@ -34,7 +34,7 @@ void Employee::setName(std::string name){
 void Employee::setLastName(std::string lastName){
     this->lastName = lastName;
 }
-void Employee::setAddres(std::string address){
+void Employee::setAddress(std::string address){
     this->address = address;
 }
 void Employee::setPhoneNumber(std::string phoneNumber){
@@ -44,7 +44,7 @@ void Employee::setSalary(float salary){
     this->salary = salary;
 }
 void Employee::setGender(char gender){
-    this->gender[0] = gender;
+    this->gender = gender;
 }
 void Employee::setBornDay(int bornDay){
     this->bornDay = bornDay;

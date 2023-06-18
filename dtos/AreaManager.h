@@ -1,3 +1,5 @@
+#ifndef AREAMANAGER_H
+#define AREAMANAGER_H
 #include "Employee.h"
 #include <string>
 namespace dtos {
@@ -19,3 +21,4 @@ class AreaManager : public Employee {
     std::string area;
 };
 } // namespace dtos
+#endif // AREAMANAGER_H

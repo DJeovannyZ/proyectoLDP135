@@ -1,3 +1,5 @@
+#ifndef SUPERVISOR_H
+#define SUPERVISOR_H
 #include "Employee.h"
 
 namespace dtos {
@@ -21,3 +23,4 @@ class Supervisor : public Employee {
     std::string departament, teamCharge;
 };
 } // namespace dtos
+#endif // SUPERVISOR_H

@@ -1,5 +1,6 @@
+#ifndef MANAGER_H
+#define MANAGER_H
 #include "Employee.h"
-
 namespace dtos {
 class Manager : public Employee {
   public:
@@ -17,3 +18,4 @@ class Manager : public Employee {
     std::string branch;
 };
 } // namespace dtos
+#endif // MANAGER_H

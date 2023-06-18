@@ -1,3 +1,5 @@
+#ifndef TECHNICIAN_H
+#define TECHNICIAN_H
 #include "Employee.h"
 
 namespace dtos{
@@ -17,3 +19,4 @@ private:
   std::string specialization;
 };
 }
+#endif // TECHNICIAN_H
