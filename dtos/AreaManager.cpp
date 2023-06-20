@@ -3,9 +3,9 @@ namespace dtos {
 AreaManager::AreaManager(){}
 AreaManager::AreaManager(int ID, std::string name, std::string lastName,
                          std::string addres, std::string phoneNumber,
-                         float salary, char gender, int bornDay, int bornMonth,
+                         float salary, float netSalary, char gender, int bornDay, int bornMonth,
                          int bornYear, std::string area)
-    : Employee(ID, name, lastName, addres, phoneNumber, salary, gender, bornDay,
+    : Employee(ID, name, lastName, addres, phoneNumber, salary, netSalary, gender, bornDay,
                bornMonth, bornYear) {
     this->area = area;
 }

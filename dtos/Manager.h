@@ -6,7 +6,7 @@ class Manager : public Employee {
   public:
     Manager();
     Manager(int ID, std::string name, std::string lastName, std::string addres,
-            std::string phoneNumber, float salary, char gender, int bornDay,
+            std::string phoneNumber, float salary, float netSalary, char gender, int bornDay,
             int bornMonth, int bornYear, std::string branch);
 
     // getters

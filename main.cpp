@@ -1,4 +1,5 @@
 #include "model/ModelEmployee.h"
+//#include "../dtos/Manager.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -30,6 +31,64 @@ int main() {
     model.sortByLastName(employees);
 
     std::cout << employees[0].getName() << std::endl;
+
+    //AGREGAR EMPLEADO DE TIPO GERENTE
+ 
+    dtos::Manager manager1;
+    std::cout<<"Ingrese los datos que se le soliciten: \n";
+    std::string input;
+
+    std::cout<<"ID: ";
+    std::getline(std::cin, input);
+    int ID = std::stoi(input);
+    manager1.setID(ID);
+    
+    std::cout<<"Nombre: ";
+    std::getline(std::cin, input);
+    manager1.setName(input);
+
+    std::cout<<"Apellido: ";
+    std::getline(std::cin, input);
+    manager1.setLastName(input);
+
+    std::cout<<"Direccion: ";
+    std::getline(std::cin, input);
+    manager1.setAddress(input);
+
+    std::cout<<"Numero de telefono: ";
+    std::getline(std::cin, input);
+    manager1.setPhoneNumber(input);
+
+    std::cout<<"Salario: ";
+    std::getline(std::cin, input);
+    float salary = std::stof(input);
+    manager1.setSalary(salary);
+
+    std::cout<<"Genero: (M/F) ";
+    std::getline(std::cin, input);
+    char gender = input[0];
+    manager1.setGender(gender);
+
+    std::cout<<"Dia de nacimeinto: ";
+    std::getline(std::cin, input);
+    int bornDay = std::stoi(input);
+    manager1.setBornDay(bornDay);
+
+    std::cout<<"Mes de naciciento: ";
+    std::getline(std::cin, input);
+    int bornMonth = std::stoi(input);
+    manager1.setBornMonth(bornMonth);
+
+    std::cout<<"Anio de nacimimiento: ";
+    std::getline(std::cin, input);
+    int bornYear = std::stoi(input);
+    manager1.setBornYear(bornYear);
+
+    std::cout<<"Area: ";
+    std::getline(std::cin, input);
+    manager1.setBranch(input);
+
+    model.addManager(manager1);
 
     return 0;
 }

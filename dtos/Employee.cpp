@@ -3,7 +3,7 @@
 namespace dtos {
 Employee::Employee(){}
 Employee::Employee(int ID, std::string name, std::string lastName, std::string address,
-                   std::string phoneNumber, float salary, char gender,
+                   std::string phoneNumber, float salary, float netSalary, char gender,
                    int bornDay, int bornMonth, int bornYear) {
     this->ID = ID;
     this->name = name;
@@ -11,6 +11,7 @@ Employee::Employee(int ID, std::string name, std::string lastName, std::string a
     this->address = address;
     this->phoneNumber = phoneNumber;
     this->salary = salary;
+    this->netSalary = netSalary;
     this->gender = gender;
     this->bornDay = bornDay;
     this->bornMonth = bornMonth;
@@ -23,7 +24,9 @@ std::string Employee::getLastName() { return this->lastName; }
 std::string Employee::getAddress() { return this->address; }
 std::string Employee::getPhoneNumber() { return this->phoneNumber; }
 float Employee::getSalary() { return this->salary; }
+float Employee::getNetSalary(){return this->netSalary;}
 char Employee::getGender() { return this->gender; }
+int Employee::getID(){return this->ID;}
 int Employee::getBornDay() { return this->bornDay; }
 int Employee::getBornMonth() { return this->bornMonth; }
 int Employee::getBornYear() { return this->bornYear; }
@@ -48,7 +51,12 @@ void Employee::setPhoneNumber(std::string phoneNumber){
 void Employee::setSalary(float salary){
     this->salary = salary;
 }
-void Employee::setGender(char gender){
+void Employee::setNetSalary(float netSalary)
+{
+    this->netSalary = netSalary;
+}
+void Employee::setGender(char gender)
+{
     this->gender = gender;
 }
 void Employee::setBornDay(int bornDay){

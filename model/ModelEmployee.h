@@ -36,33 +36,9 @@ class ModelEmployee {
 
     int getCountTechnicians(std::vector<dtos::Technician> listTechnicians);
 
-    std::vector<dtos::Employee>
-    sortByLastName(std::vector<dtos::Employee> listEmployees);
+    std::vector<dtos::Employee> sortByLastName(std::vector<dtos::Employee> listEmployees);
 
-    void addEmployee(std::vector<std::string> *valuesEmployee, dtos::Employee *employee);
-    valuesEmployee.push_back(employee.getID());
-    //logica para agregar atributos en comun al vector
-    valuesEmployee.push_back(Employee.getID());
-
-    void addManager(dtos::Manager manager);
-    //esta funcion llamara a addEmployee y agregara el atributo branch y despues llamara a saveEmployee
-    //logica para obtener atributos y guardarlos en el vector
-    std::vector<std::string> attributes;
-    addEmployee(&attributes, &manager)
-    attributes.push_back(manager.getBranch());
-
-    void saveEmployee(std::string pathCSV, std::vector<std::string> values);
-    //logica para guardar  en el archivo
-
-    void addAreaManager(dtos::AreaManager AreaManager);
-
-    void addSupervisor(dtos::Supervisor Supervisor);
-
-    void addTechnician(dtos::Technician Technician);
-
-
-    std::vector<dtos::Employee>
-    sortByNetSalary(std::vector<dtos::Employee> listEmployees, bool ascending);
+    std::vector<dtos::Employee> sortByNetSalary(std::vector<dtos::Employee> listEmployees, bool ascending);
 
     float calculateRent(dtos::Employee employee);
 
@@ -71,6 +47,20 @@ class ModelEmployee {
     float calculateISSS(dtos::Employee employee);
 
     void setNetSalary(dtos::Employee* employee);
+    
+/////////////////////////////////////////////////////////////////////////////////
+    void addEmployee(std::vector<std::string> *valuesEmployee, dtos::Employee *employee);
+
+    void saveEmployee(std::string pathCSV, std::vector<std::string> values);
+
+    void addManager(dtos::Manager manager);
+
+    void addAreaManager(dtos::AreaManager AreaManager);
+
+    void addSupervisor(dtos::Supervisor Supervisor);
+
+    void addTechnician(dtos::Technician Technician);
+
 };
 } // namespace model
 #endif // MODELEMPLOYEE_H

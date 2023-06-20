@@ -4,9 +4,9 @@ namespace dtos{
   
 Supervisor::Supervisor(){}
 Supervisor::Supervisor(int ID, std::string name, std::string lastName, std::string addres,
-                 std::string phoneNumber, float salary, char gender,
+                 std::string phoneNumber, float salary, float netSalary, char gender,
                  int bornDay, int bornMonth, int bornYear, std::string departament, std::string teamCharge)
-    : Employee(ID, name, lastName, addres, phoneNumber, salary, gender, bornDay,
+    : Employee(ID, name, lastName, addres, phoneNumber, salary, netSalary, gender, bornDay,
                bornMonth, bornYear) {
   this->departament = departament;
   this->teamCharge = teamCharge;

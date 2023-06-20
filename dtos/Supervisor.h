@@ -8,7 +8,7 @@ class Supervisor : public Employee {
   public:
     Supervisor();
     Supervisor(int ID, std::string name, std::string lastName,
-               std::string addres, std::string phoneNumber, float salary,
+               std::string addres, std::string phoneNumber, float salary, float neSalary,
                char gender, int bornDay, int bornMonth, int bornYear,
                std::string departament, std::string teamCharge);
 

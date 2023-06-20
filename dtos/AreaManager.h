@@ -9,7 +9,7 @@ class AreaManager : public Employee {
     AreaManager();
     AreaManager(int ID, std::string name, std::string lastName,
                              std::string addres, std::string phoneNumber,
-                             float salary, char gender, int bornDay,
+                             float salary, float netSalary, char gender, int bornDay,
                              int bornMonth, int bornYear, std::string area);
 
     // setters
