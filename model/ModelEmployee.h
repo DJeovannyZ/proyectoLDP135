@@ -12,6 +12,7 @@ namespace model {
 class ModelEmployee {
 
   public:
+    ModelEmployee();
     std::vector<std::vector<std::string>> getValues(std::string pathCSV);
 
     void setValuesEmployee(std::vector<std::string> valuesEmployee, dtos::Employee *employee);

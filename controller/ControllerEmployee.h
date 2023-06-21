@@ -1,11 +1,22 @@
 #ifndef CONTROLLEREMPLOYEE_H
 #define CONTROLLEREMPLOYEE_H
-#include <string>
 #include "../model//ModelEmployee.h"
-namespace controller{
-    class Controller{
+#include <string>
+namespace controller {
+class ControllerEmployee {
 
+  public:
+    ControllerEmployee();
     void saveEmployee();
+
+    void SortEmployeesByLastName();
+
+    void SortEmployeesByNetSalary();
+
+    void getNumberEmployeesByType();
+
+  private:
+    model::ModelEmployee myModel;
 };
-}
-#endif //CONTROLLEREMPLOYEE_H
+} // namespace controller
+#endif // CONTROLLEREMPLOYEE_H

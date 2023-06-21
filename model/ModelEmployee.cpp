@@ -4,6 +4,7 @@
 #include <iostream>
 
 namespace model {
+ModelEmployee::ModelEmployee() {}
 
 std::vector<std::vector<std::string>>
 ModelEmployee::getValues(std::string pathCSV) {
