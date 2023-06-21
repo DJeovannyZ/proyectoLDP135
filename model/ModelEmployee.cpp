@@ -1,4 +1,5 @@
 #include "ModelEmployee.h"
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 
@@ -10,7 +11,7 @@ ModelEmployee::getValues(std::string pathCSV) {
     std::ifstream fileCSV(pathCSV);
     if (fileCSV.is_open()) {
         std::string line;
-        std::getline(fileCSV, line); // ignorar la primera linea
+        // std::getline(fileCSV, line); // ignorar la primera linea
         while (std::getline(fileCSV, line)) {
             std::vector<std::string> lineValues;
             std::stringstream ss(line);
@@ -136,15 +137,54 @@ ModelEmployee::getListEmployees(std::vector<std::string> listPathCSV) {
     return listEmployees;
 }
 
+int ModelEmployee::getCountEmployees(std::string pathCSV) {
+    int numberEmployees = 0;
+    std::string lineTEMP;
+    std::ifstream fileCSV(pathCSV);
+    if (fileCSV.is_open()) {
+        while (std::getline(fileCSV, lineTEMP)) {
+            numberEmployees++;
+        }
+    } else {
+        std::cout << "No se pudo abrir el archivo." << std::endl;
+    }
+    return numberEmployees;
+}
+
+bool comparateLastNames(dtos::Employee employee, dtos::Employee employee2) {
+    return employee.getLastName() < employee2.getLastName();
+}
+
 std::vector<dtos::Employee>
 ModelEmployee::sortByLastName(std::vector<dtos::Employee> listEmployees) {
-    return std::vector<dtos::Employee>();
+    std::vector<dtos::Employee> listEmployeesSorted = listEmployees;
+    std::sort(listEmployeesSorted.begin(), listEmployeesSorted.end(),
+              comparateLastNames);
+    return listEmployeesSorted;
+}
+
+bool comparateSalariesAscending(dtos::Employee employee,
+                                dtos::Employee employee2) {
+    return employee.getNetSalary() < employee2.getNetSalary();
+}
+
+bool comparateSalariesDescending(dtos::Employee employee,
+                                 dtos::Employee employee2) {
+    return employee.getNetSalary() > employee2.getNetSalary();
 }
 
 std::vector<dtos::Employee>
 ModelEmployee::sortByNetSalary(std::vector<dtos::Employee> listEmployees,
                                bool ascending) {
-    return std::vector<dtos::Employee>();
+    std::vector<dtos::Employee> listEmployeesSorted = listEmployees;
+    if (ascending) {
+        std::sort(listEmployeesSorted.begin(), listEmployeesSorted.end(),
+                  comparateSalariesAscending);
+    } else {
+        std::sort(listEmployeesSorted.begin(), listEmployeesSorted.end(),
+                  comparateSalariesDescending);
+    }
+    return listEmployeesSorted;
 }
 
 float ModelEmployee::calculateRent(dtos::Employee employee) {
@@ -218,7 +258,8 @@ void ModelEmployee::saveEmployee(std::string pathCSV,
         // }
         for (int i = 0; i < valuesEmployee.size(); i++) {
             outputfileCSV << valuesEmployee[i];
-            //esta validacion es para que no agregue una coma al final de la linea.
+            // esta validacion es para que no agregue una coma al final de la
+            // linea.
             if (i < valuesEmployee.size() - 1) {
                 outputfileCSV << ",";
             }
@@ -258,7 +299,5 @@ void ModelEmployee::addTechnician(dtos::Technician Technician) {
     attributes.push_back(Technician.getSpecialization());
     saveEmployee("./dataCSV/Technician.csv", attributes);
 }
-
-
 
 } // namespace model

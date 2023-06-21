@@ -26,7 +26,7 @@ class ModelEmployee {
 
     std::vector<dtos::Technician> getListTechnicians(std::string pathCSV);
 
-    int getCountEmployees(std::vector<dtos::Employee> listEmployees);
+    int getCountEmployees(std::string pathCSV);
 
     std::vector<dtos::Employee> sortByLastName(std::vector<dtos::Employee> listEmployees);
 
