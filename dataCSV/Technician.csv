@@ -1,4 +1,3 @@
-ID, Name, LastName, AddressEmployee, PhoneNumber, Salary, Gender, BornDay, BornMonth, BornYear, Especializacion
 00011,Jose,Valle,San Salvador,78030088,350.00,M,17,5,2000,Soporte Tecnico
 00012,Roberto,Campos,Santa Ana,62427858,350.00,M,15,6,1998,Mantenimiento
 00013,Francisco,Fernandez,San Salvador,71128504,375.00,M,24,2,1999,Redes

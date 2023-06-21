@@ -241,7 +241,7 @@ void ModelEmployee::addAreaManager(dtos::AreaManager AreaManager) {
     std::vector<std::string> attributes;
     addEmployee(&attributes, &AreaManager);
     attributes.push_back(AreaManager.getArea());
-    saveEmployee("./dataCSV/AreaManagerInformation.csv", attributes);
+    saveEmployee("./dataCSV/AreaManager.csv", attributes);
 }
 
 void ModelEmployee::addSupervisor(dtos::Supervisor Supervisor) {
@@ -258,5 +258,7 @@ void ModelEmployee::addTechnician(dtos::Technician Technician) {
     attributes.push_back(Technician.getSpecialization());
     saveEmployee("./dataCSV/Technician.csv", attributes);
 }
+
+
 
 } // namespace model
