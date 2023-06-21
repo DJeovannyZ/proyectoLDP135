@@ -1,6 +1,6 @@
 ID, Name, LastName, AddressEmployee, PhoneNumber, Salary, Gender, BornDay, BornMonth, BornYear, Area, EquipoCargo
-00006, Margarita, Lopez, Santa Ana, 78875548, 750.00, F, 14, 11, 1997, Atencion al Cliente, Equipo AC-A
-00007, Katherine, Martinez, San Salvador, 63481965, 750.00, F, 11, 3, 1999, Publicidad, Equipo PU-A
-00008, Gustavo, Hernandez, Santa Ana, 64150001, 750.00, M, 8, 8, 1995, Ventas, Equipo VE-B
-00009, Antonio, Rodriguez, San Salvador, 79995606, 750.00, M, 9, 7, 1985, Atencion al Cliente, Equipo AC-B
-00010, Ricardo, Jimenez, San Salvador, 71028753, 750.00, M, 29, 1, 1990, Ventas, Equipo VE-A
+00006,Margarita,Lopez,Santa Ana,78875548,750.00,F,14,11,1997,Atencion al Cliente,Equipo AC-A
+00007,Katherine,Martinez,San Salvador,63481965,750.00,F,11,3,1999,Publicidad,Equipo PU-A
+00008,Gustavo,Hernandez,Santa Ana,64150001,750.00,M,8,8,1995,Ventas,Equipo VE-B
+00009,Antonio,Rodriguez,San Salvador,79995606,750.00,M,9,7,1985,Atencion al Cliente,Equipo AC-B
+00010,Ricardo,Jimenez,San Salvador,71028753,750.00,M,29,1,1990,Ventas,Equipo VE-A

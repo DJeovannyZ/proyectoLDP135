@@ -28,14 +28,6 @@ class ModelEmployee {
 
     int getCountEmployees(std::vector<dtos::Employee> listEmployees);
 
-    int getCountManagers(std::vector<dtos::Manager> listManagers);
-
-    int getCountAreaManagers(std::vector<dtos::AreaManager> listAreaManagers);
-
-    int getCountSupervisors(std::vector<dtos::Supervisor> listSupervisors);
-
-    int getCountTechnicians(std::vector<dtos::Technician> listTechnicians);
-
     std::vector<dtos::Employee> sortByLastName(std::vector<dtos::Employee> listEmployees);
 
     std::vector<dtos::Employee> sortByNetSalary(std::vector<dtos::Employee> listEmployees, bool ascending);
@@ -55,9 +47,9 @@ class ModelEmployee {
 
     void addManager(dtos::Manager manager);
 
-    void addAreaManager(dtos::AreaManager AreaManager);
+    void addAreaManager(dtos::AreaManager areaManager);
 
-    void addSupervisor(dtos::Supervisor Supervisor);
+    void addSupervisor(dtos::Supervisor supervisor);
 
     void addTechnician(dtos::Technician Technician);
 

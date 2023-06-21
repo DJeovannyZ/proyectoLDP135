@@ -26,7 +26,6 @@ ModelEmployee::getValues(std::string pathCSV) {
     }
     return values;
 }
-
 void ModelEmployee::setValuesEmployee(std::vector<std::string> valuesEmployee,
                                       dtos::Employee *employee) {
 
@@ -137,18 +136,18 @@ ModelEmployee::getListEmployees(std::vector<std::string> listPathCSV) {
     return listEmployees;
 }
 
-std::vector<dtos::Employee> ModelEmployee::sortByLastName(std::vector<dtos::Employee> listEmployees)
-{
+std::vector<dtos::Employee>
+ModelEmployee::sortByLastName(std::vector<dtos::Employee> listEmployees) {
     return std::vector<dtos::Employee>();
 }
 
-std::vector<dtos::Employee> ModelEmployee::sortByNetSalary(std::vector<dtos::Employee> listEmployees, bool ascending)
-{
+std::vector<dtos::Employee>
+ModelEmployee::sortByNetSalary(std::vector<dtos::Employee> listEmployees,
+                               bool ascending) {
     return std::vector<dtos::Employee>();
 }
 
-float ModelEmployee::calculateRent(dtos::Employee employee)
-{
+float ModelEmployee::calculateRent(dtos::Employee employee) {
     float salary = employee.getSalary();
     float salaryRent = 0;
     float aux = 0;
@@ -196,10 +195,8 @@ void ModelEmployee::setNetSalary(dtos::Employee *employee) {
     employee->setNetSalary(netSalary);
 }
 
-void ModelEmployee::addEmployee(std::vector<std::string> *valuesEmployee, dtos::Employee *employee)
-{
-    //logica para agregar atributos en comun al vector
-    //valuesEmployee.push_back(Employee.getID());
+void ModelEmployee::addEmployee(std::vector<std::string> *valuesEmployee,
+                                dtos::Employee *employee) {
     valuesEmployee->push_back(std::to_string(employee->getID()));
     valuesEmployee->push_back(employee->getName());
     valuesEmployee->push_back(employee->getLastName());
@@ -209,59 +206,57 @@ void ModelEmployee::addEmployee(std::vector<std::string> *valuesEmployee, dtos::
     valuesEmployee->push_back(std::to_string(employee->getGender()));
     valuesEmployee->push_back(std::to_string(employee->getBornDay()));
     valuesEmployee->push_back(std::to_string(employee->getBornMonth()));
-    valuesEmployee->push_back(std::to_string(employee->getBornYear())); 
+    valuesEmployee->push_back(std::to_string(employee->getBornYear()));
 }
 
-void ModelEmployee::saveEmployee(std::string pathCSV, std::vector<std::string> valuesEmployee)
-{
-        //logica para guardar  en el archivo
+void ModelEmployee::saveEmployee(std::string pathCSV,
+                                 std::vector<std::string> valuesEmployee) {
     std::ofstream outputfileCSV(pathCSV, std::ios::app);
-    if (outputfileCSV.is_open())
-    {
-        for (const auto& value:valuesEmployee)
-        {
-            outputfileCSV<<value<<", ";
+    if (outputfileCSV.is_open()) {
+        // for (const auto &value : valuesEmployee) {
+        //     outputfileCSV << value << ",";
+        // }
+        for (int i = 0; i < valuesEmployee.size(); i++) {
+            outputfileCSV << valuesEmployee[i];
+            //esta validacion es para que no agregue una coma al final de la linea.
+            if (i < valuesEmployee.size() - 1) {
+                outputfileCSV << ",";
+            }
         }
-        outputfileCSV<<"\n";
+        outputfileCSV << "\n";
         outputfileCSV.close();
     } else {
-        std::cout<<"El archivo no se puede abrir.\n";
+        std::cout << "El archivo no se puede abrir.\n";
     }
 }
 
-void ModelEmployee::addManager(dtos::Manager manager1)
-{
-    //esta funcion llamara a addEmployee y agregara el atributo branch y despues llamara a saveEmployee
-    //logica para obtener atributos y guardarlos en el vector
+void ModelEmployee::addManager(dtos::Manager manager1) {
     std::vector<std::string> attributes;
     addEmployee(&attributes, &manager1);
     attributes.push_back(manager1.getBranch());
-    saveEmployee("./dataCSV/Manager.csv",attributes);
+    saveEmployee("./dataCSV/Manager.csv", attributes);
 }
 
-void ModelEmployee::addAreaManager(dtos::AreaManager AreaManager)
-{
+void ModelEmployee::addAreaManager(dtos::AreaManager AreaManager) {
     std::vector<std::string> attributes;
     addEmployee(&attributes, &AreaManager);
     attributes.push_back(AreaManager.getArea());
-    saveEmployee("./dataCSV/AreaManagerInformation.csv",attributes);
+    saveEmployee("./dataCSV/AreaManagerInformation.csv", attributes);
 }
 
-void ModelEmployee::addSupervisor(dtos::Supervisor Supervisor)
-{
+void ModelEmployee::addSupervisor(dtos::Supervisor Supervisor) {
     std::vector<std::string> attributes;
     addEmployee(&attributes, &Supervisor);
     attributes.push_back(Supervisor.getDepartament());
     attributes.push_back(Supervisor.getTeamCharge());
-    saveEmployee("./dataCSV/Supervisor.csv",attributes);
+    saveEmployee("./dataCSV/Supervisor.csv", attributes);
 }
 
-void ModelEmployee::addTechnician(dtos::Technician Technician)
-{
+void ModelEmployee::addTechnician(dtos::Technician Technician) {
     std::vector<std::string> attributes;
     addEmployee(&attributes, &Technician);
     attributes.push_back(Technician.getSpecialization());
-    saveEmployee("./dataCSV/Technician.csv",attributes);
+    saveEmployee("./dataCSV/Technician.csv", attributes);
 }
 
 } // namespace model

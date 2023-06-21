@@ -4,9 +4,8 @@
 #include "../model//ModelEmployee.h"
 namespace controller{
     class Controller{
-    std::string getCountEmployees(){
-       
-    }
+
+    void saveEmployee();
 };
 }
 #endif //CONTROLLEREMPLOYEE_H
