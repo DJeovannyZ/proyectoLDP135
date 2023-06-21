@@ -25,7 +25,7 @@ class Employee {
     int getBornDay();
     int getBornMonth();
     int getBornYear();
-    std::string printEmployee();
+    std::string print();
 
     // Setters
     void setName(std::string name);

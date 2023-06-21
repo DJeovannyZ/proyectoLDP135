@@ -14,6 +14,14 @@ void ControllerEmployee::SortEmployeesByLastName() {
 
     std::vector<dtos::Employee> listEmployeesSorted =
         myModel.sortByLastName(listEmployees);
+    printEmployees(listEmployees);
+}
+
+void ControllerEmployee::printEmployees(
+    std::vector<dtos::Employee> listEmployees) {
+    for (int i = 0; i < listEmployees.size(); i++) {
+        std::cout << listEmployees[i].print() << std::endl;
+    }
 }
 
 } // namespace controller

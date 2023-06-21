@@ -15,6 +15,8 @@ class ControllerEmployee {
 
     void getNumberEmployeesByType();
 
+    void printEmployees(std::vector<dtos::Employee> listEmployees);
+
   private:
     model::ModelEmployee myModel;
 };

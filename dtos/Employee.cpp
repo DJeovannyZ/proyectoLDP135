@@ -33,7 +33,7 @@ int Employee::getBornDay() { return this->bornDay; }
 int Employee::getBornMonth() { return this->bornMonth; }
 int Employee::getBornYear() { return this->bornYear; }
 
-std::string Employee::printEmployee() {
+std::string Employee::print() {
     std::string informationEmployee;
     informationEmployee.append("ID: ")
         .append(std::to_string(this->getID()))
