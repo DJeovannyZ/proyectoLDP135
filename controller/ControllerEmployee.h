@@ -15,7 +15,8 @@ class ControllerEmployee {
 
     void getNumberEmployeesByType();
 
-    void printEmployees(std::vector<dtos::Employee> listEmployees);
+    void
+    printEmployees(std::vector<std::shared_ptr<dtos::Employee>> listEmployees);
 
     std::vector<std::string> getListPathCSV();
 

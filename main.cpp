@@ -1,5 +1,4 @@
-#include "model/ModelEmployee.h"
-// #include "../dtos/Manager.h"
+#include "controller/ControllerEmployee.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -7,36 +6,38 @@
 #include <vector>
 
 int main() {
-    model::ModelEmployee model;
+    // model::ModelEmployee model;
+    controller::ControllerEmployee myController;
+    myController.SortEmployeesByLastName();
 
-    std::vector<dtos::Manager> managers =
-        model.getListManagers("./dataCSV/Manager.csv");
+    // std::vector<dtos::Manager> managers =
+    //     model.getListManagers("./dataCSV/Manager.csv");
 
-    // std::cout << managers.size() << std::endl;
-    // std::cout << managers[0].getName();
-    // std::cout << managers[1].getName();
+    // // std::cout << managers.size() << std::endl;
+    // // std::cout << managers[0].getName();
+    // // std::cout << managers[1].getName();
 
-    std::string pathAreaManager = "./dataCSV/AreaManagerInformation.csv";
-    std::string pathSupervisor = "./dataCSV/Supervisor.csv";
-    std::string pathTechnician = "./dataCSV/Technician.csv";
+    // std::string pathAreaManager = "./dataCSV/AreaManagerInformation.csv";
+    // std::string pathSupervisor = "./dataCSV/Supervisor.csv";
+    // std::string pathTechnician = "./dataCSV/Technician.csv";
 
-    std::vector<std::string> listPathCSV;
-    listPathCSV.push_back("./dataCSV/Manager.csv");
-    listPathCSV.push_back(pathAreaManager);
-    listPathCSV.push_back(pathSupervisor);
-    listPathCSV.push_back(pathTechnician);
+    // std::vector<std::string> listPathCSV;
+    // listPathCSV.push_back("./dataCSV/Manager.csv");
+    // listPathCSV.push_back(pathAreaManager);
+    // listPathCSV.push_back(pathSupervisor);
+    // listPathCSV.push_back(pathTechnician);
 
-    std::vector<dtos::Employee> employees = model.getListEmployees(listPathCSV);
+    // std::vector<dtos::Employee> employees = model.getListEmployees(listPathCSV);
 
-    model.sortByLastName(employees);
+    // model.sortByLastName(employees);
 
-    std::cout << employees[0].getName() << std::endl;
+    // std::cout << employees[0].getName() << std::endl;
 
-    // AGREGAR EMPLEADO DE TIPO GERENTE
+    // // AGREGAR EMPLEADO DE TIPO GERENTE
 
-    dtos::Manager manager(12345, "John", "Doe", "123 Main Street",
-                              "555-1234", 5000.0, 4000.0, 'M', 15, 6, 1990,
-                              "Sales");
+    // dtos::Manager manager(12345, "John", "Doe", "123 Main Street",
+    //                           "555-1234", 5000.0, 4000.0, 'M', 15, 6, 1990,
+    //                           "Sales");
     // std::cout<<"Ingrese los datos que se le soliciten: \n"
     // std::string input;
 
@@ -90,7 +91,7 @@ int main() {
     // std::getline(std::cin, input);
     // manager1.setBranch(input);
 
-    model.addManager(manager);
+    // model.addManager(manager);
 
     return 0;
 }

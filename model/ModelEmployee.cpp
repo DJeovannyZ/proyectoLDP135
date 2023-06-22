@@ -113,28 +113,24 @@ ModelEmployee::getListTechnicians(std::string pathCSV) {
     return listTechnicians;
 }
 
-std::vector<dtos::Employee>
-ModelEmployee::getListEmployees(std::vector<std::string> listPathCSV) {
-    std::vector<dtos::Employee> listEmployees;
+std::vector<std::shared_ptr<dtos::Employee>> ModelEmployee::getListEmployees(std::vector<std::string> listPathCSV) {
+    std::vector<std::shared_ptr<dtos::Employee>> listEmployees;
     std::vector<dtos::Manager> listManagers = getListManagers(listPathCSV[0]);
-    std::vector<dtos::AreaManager> listAreaManagers =
-        getListAreaManagers(listPathCSV[1]);
-    std::vector<dtos::Supervisor> listSupervisors =
-        getListSupervisors(listPathCSV[2]);
-    std::vector<dtos::Technician> listTechnicians =
-        getListTechnicians(listPathCSV[3]);
+    std::vector<dtos::AreaManager> listAreaManagers = getListAreaManagers(listPathCSV[1]);
+    std::vector<dtos::Supervisor> listSupervisors = getListSupervisors(listPathCSV[2]);
+    std::vector<dtos::Technician> listTechnicians = getListTechnicians(listPathCSV[3]);
 
     for (int i = 0; i < listManagers.size(); i++) {
-        listEmployees.push_back(listManagers[i]);
+        listEmployees.push_back(std::make_shared<dtos::Manager>(listManagers[i]));
     }
     for (int i = 0; i < listAreaManagers.size(); i++) {
-        listEmployees.push_back(listAreaManagers[i]);
+        listEmployees.push_back(std::make_shared<dtos::AreaManager>(listAreaManagers[i]));
     }
     for (int i = 0; i < listSupervisors.size(); i++) {
-        listEmployees.push_back(listSupervisors[i]);
+        listEmployees.push_back(std::make_shared<dtos::Supervisor>(listSupervisors[i]));
     }
     for (int i = 0; i < listTechnicians.size(); i++) {
-        listEmployees.push_back(listTechnicians[i]);
+        listEmployees.push_back(std::make_shared<dtos::Technician>(listTechnicians[i]));
     }
     return listEmployees;
 }
@@ -153,17 +149,15 @@ int ModelEmployee::getCountEmployees(std::string pathCSV) {
     return numberEmployees;
 }
 
-bool comparateLastNames(dtos::Employee employee, dtos::Employee employee2) {
-    return employee.getLastName() < employee2.getLastName();
-}
-
-std::vector<dtos::Employee>
-ModelEmployee::sortByLastName(std::vector<dtos::Employee> listEmployees) {
-    std::vector<dtos::Employee> listEmployeesSorted = listEmployees;
+std::vector<std::shared_ptr<dtos::Employee>> ModelEmployee::sortByLastName(std::vector<std::shared_ptr<dtos::Employee>> listEmployees) {
+    std::vector<std::shared_ptr<dtos::Employee>> listEmployeesSorted = listEmployees;
     std::sort(listEmployeesSorted.begin(), listEmployeesSorted.end(),
-              comparateLastNames);
+              [](const std::shared_ptr<dtos::Employee>& emp1, const std::shared_ptr<dtos::Employee>& emp2) {
+                  return emp1->getLastName() < emp2->getLastName();
+              });
     return listEmployeesSorted;
 }
+
 
 bool comparateSalariesAscending(dtos::Employee employee,
                                 dtos::Employee employee2) {
