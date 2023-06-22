@@ -10,8 +10,7 @@ class Employee {
     Employee();
     Employee(int ID, std::string name, std::string lastName,
              std::string address, std::string phoneNumber, float salary,
-             float netSalary, char gender, int bornDay, int bornMonth,
-             int bornYear);
+             char gender, int bornDay, int bornMonth, int bornYear);
 
     // Getters
     std::string getName();

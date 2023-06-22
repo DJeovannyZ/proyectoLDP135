@@ -8,7 +8,7 @@ class Technician : public Employee {
     Technician();
     Technician(int ID, std::string name, std::string lastName,
                std::string addres, std::string phoneNumber, float salary,
-               float netSalary, char gender, int bornDay, int bornMonth,
+               char gender, int bornDay, int bornMonth,
                int bornYear, std::string specialization);
 
     // getters

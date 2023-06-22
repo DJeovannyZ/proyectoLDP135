@@ -4,9 +4,8 @@ namespace dtos {
 
 Manager::Manager(int ID, std::string name, std::string lastName,
                  std::string addres, std::string phoneNumber, float salary,
-                 float netSalary, char gender, int bornDay, int bornMonth,
-                 int bornYear, std::string branch)
-    : Employee(ID, name, lastName, addres, phoneNumber, salary, netSalary,
+                 char gender, int bornDay, int bornMonth, int bornYear, std::string branch)
+    : Employee(ID, name, lastName, addres, phoneNumber, salary,
                gender, bornDay, bornMonth, bornYear) {
     this->branch = branch;
 }
