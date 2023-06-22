@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 
 namespace model {
 ModelEmployee::ModelEmployee() {}
@@ -238,13 +239,21 @@ void ModelEmployee::setNetSalary(dtos::Employee *employee) {
 
 void ModelEmployee::addEmployee(std::vector<std::string> *valuesEmployee,
                                 dtos::Employee *employee) {
-    valuesEmployee->push_back(std::to_string(employee->getID()));
+    std::ostringstream idStream; //para que siga el formato con ceros en el ID
+    idStream << std::setfill('0') << std::setw(5) << employee->getID();
+    valuesEmployee->push_back(idStream.str());
+    //valuesEmployee->push_back(std::to_string(employee->getID()));
     valuesEmployee->push_back(employee->getName());
     valuesEmployee->push_back(employee->getLastName());
     valuesEmployee->push_back(employee->getAddress());
     valuesEmployee->push_back(employee->getPhoneNumber());
-    valuesEmployee->push_back(std::to_string(employee->getSalary()));
-    valuesEmployee->push_back(std::to_string(employee->getGender()));
+    //para que el salario solo tenga dos decimales.
+    std::stringstream salaryD;
+    salaryD<<std::fixed<<std::setprecision(2)<<employee->getSalary();
+    std::string salaryWithDecimal =salaryD.str();
+    valuesEmployee->push_back(salaryWithDecimal);
+    //valuesEmployee->push_back(std::to_string(employee->getSalary()));
+    valuesEmployee->push_back(std::string(1,employee->getGender()));
     valuesEmployee->push_back(std::to_string(employee->getBornDay()));
     valuesEmployee->push_back(std::to_string(employee->getBornMonth()));
     valuesEmployee->push_back(std::to_string(employee->getBornYear()));
@@ -272,10 +281,10 @@ void ModelEmployee::saveEmployee(std::string pathCSV,
     }
 }
 
-void ModelEmployee::addManager(dtos::Manager manager1) {
+void ModelEmployee::addManager(dtos::Manager manager) {
     std::vector<std::string> attributes;
-    addEmployee(&attributes, &manager1);
-    attributes.push_back(manager1.getBranch());
+    addEmployee(&attributes, &manager);
+    attributes.push_back(manager.getBranch());
     saveEmployee("./dataCSV/Manager.csv", attributes);
 }
 
