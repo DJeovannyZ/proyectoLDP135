@@ -35,8 +35,9 @@ class ModelEmployee {
     std::vector<std::shared_ptr<dtos::Employee>>
     sortByLastName(std::vector<std::shared_ptr<dtos::Employee>> listEmployees);
 
-    std::vector<dtos::Employee>
-    sortByNetSalary(std::vector<dtos::Employee> listEmployees, bool ascending);
+    std::vector<std::shared_ptr<dtos::Employee>>
+    sortByNetSalary(std::vector<std::shared_ptr<dtos::Employee>> listEmployees,
+                    bool ascending);
 
     float calculateRent(dtos::Employee employee);
 
@@ -44,7 +45,7 @@ class ModelEmployee {
 
     float calculateISSS(dtos::Employee employee);
 
-    void setNetSalary(dtos::Employee *employee);
+    void setNetSalary(std::shared_ptr<dtos::Employee> employee);
 
     /////////////////////////////////////////////////////////////////////////////////
     void addEmployee(std::vector<std::string> *valuesEmployee,

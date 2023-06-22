@@ -1,8 +1,8 @@
 #include "ModelEmployee.h"
 #include <algorithm>
 #include <fstream>
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 namespace model {
 ModelEmployee::ModelEmployee() {}
@@ -113,24 +113,32 @@ ModelEmployee::getListTechnicians(std::string pathCSV) {
     return listTechnicians;
 }
 
-std::vector<std::shared_ptr<dtos::Employee>> ModelEmployee::getListEmployees(std::vector<std::string> listPathCSV) {
+std::vector<std::shared_ptr<dtos::Employee>>
+ModelEmployee::getListEmployees(std::vector<std::string> listPathCSV) {
     std::vector<std::shared_ptr<dtos::Employee>> listEmployees;
     std::vector<dtos::Manager> listManagers = getListManagers(listPathCSV[0]);
-    std::vector<dtos::AreaManager> listAreaManagers = getListAreaManagers(listPathCSV[1]);
-    std::vector<dtos::Supervisor> listSupervisors = getListSupervisors(listPathCSV[2]);
-    std::vector<dtos::Technician> listTechnicians = getListTechnicians(listPathCSV[3]);
+    std::vector<dtos::AreaManager> listAreaManagers =
+        getListAreaManagers(listPathCSV[1]);
+    std::vector<dtos::Supervisor> listSupervisors =
+        getListSupervisors(listPathCSV[2]);
+    std::vector<dtos::Technician> listTechnicians =
+        getListTechnicians(listPathCSV[3]);
 
     for (int i = 0; i < listManagers.size(); i++) {
-        listEmployees.push_back(std::make_shared<dtos::Manager>(listManagers[i]));
+        listEmployees.push_back(
+            std::make_shared<dtos::Manager>(listManagers[i]));
     }
     for (int i = 0; i < listAreaManagers.size(); i++) {
-        listEmployees.push_back(std::make_shared<dtos::AreaManager>(listAreaManagers[i]));
+        listEmployees.push_back(
+            std::make_shared<dtos::AreaManager>(listAreaManagers[i]));
     }
     for (int i = 0; i < listSupervisors.size(); i++) {
-        listEmployees.push_back(std::make_shared<dtos::Supervisor>(listSupervisors[i]));
+        listEmployees.push_back(
+            std::make_shared<dtos::Supervisor>(listSupervisors[i]));
     }
     for (int i = 0; i < listTechnicians.size(); i++) {
-        listEmployees.push_back(std::make_shared<dtos::Technician>(listTechnicians[i]));
+        listEmployees.push_back(
+            std::make_shared<dtos::Technician>(listTechnicians[i]));
     }
     return listEmployees;
 }
@@ -149,30 +157,31 @@ int ModelEmployee::getCountEmployees(std::string pathCSV) {
     return numberEmployees;
 }
 
-std::vector<std::shared_ptr<dtos::Employee>> ModelEmployee::sortByLastName(std::vector<std::shared_ptr<dtos::Employee>> listEmployees) {
-    std::vector<std::shared_ptr<dtos::Employee>> listEmployeesSorted = listEmployees;
+std::vector<std::shared_ptr<dtos::Employee>> ModelEmployee::sortByLastName(
+    std::vector<std::shared_ptr<dtos::Employee>> listEmployees) {
+    std::vector<std::shared_ptr<dtos::Employee>> listEmployeesSorted =
+        listEmployees;
     std::sort(listEmployeesSorted.begin(), listEmployeesSorted.end(),
-              [](const std::shared_ptr<dtos::Employee>& emp1, const std::shared_ptr<dtos::Employee>& emp2) {
+              [](const std::shared_ptr<dtos::Employee> &emp1,
+                 const std::shared_ptr<dtos::Employee> &emp2) {
                   return emp1->getLastName() < emp2->getLastName();
               });
     return listEmployeesSorted;
 }
-
-
-bool comparateSalariesAscending(dtos::Employee employee,
-                                dtos::Employee employee2) {
-    return employee.getNetSalary() < employee2.getNetSalary();
+bool comparateSalariesAscending(const std::shared_ptr<dtos::Employee>& employee,
+                                const std::shared_ptr<dtos::Employee>& employee2) {
+    return employee->getNetSalary() < employee2->getNetSalary();
 }
 
-bool comparateSalariesDescending(dtos::Employee employee,
-                                 dtos::Employee employee2) {
-    return employee.getNetSalary() > employee2.getNetSalary();
+bool comparateSalariesDescending(const std::shared_ptr<dtos::Employee>& employee,
+                                 const std::shared_ptr<dtos::Employee>& employee2) {
+    return employee->getNetSalary() > employee2->getNetSalary();
 }
 
-std::vector<dtos::Employee>
-ModelEmployee::sortByNetSalary(std::vector<dtos::Employee> listEmployees,
+std::vector<std::shared_ptr<dtos::Employee>>
+ModelEmployee::sortByNetSalary(std::vector<std::shared_ptr<dtos::Employee>> listEmployees,
                                bool ascending) {
-    std::vector<dtos::Employee> listEmployeesSorted = listEmployees;
+    std::vector<std::shared_ptr<dtos::Employee>> listEmployeesSorted = listEmployees;
     if (ascending) {
         std::sort(listEmployeesSorted.begin(), listEmployeesSorted.end(),
                   comparateSalariesAscending);
@@ -223,9 +232,8 @@ float ModelEmployee::calculateISSS(dtos::Employee employee) {
     return discountISSS;
 }
 
-void ModelEmployee::setNetSalary(dtos::Employee *employee) {
+void ModelEmployee::setNetSalary(std::shared_ptr<dtos::Employee> employee) {
     float netSalary;
-
     netSalary = employee->getSalary() - calculateRent(*employee) -
                 calculateAFP(*employee) - calculateISSS(*employee);
     employee->setNetSalary(netSalary);
@@ -233,21 +241,21 @@ void ModelEmployee::setNetSalary(dtos::Employee *employee) {
 
 void ModelEmployee::addEmployee(std::vector<std::string> *valuesEmployee,
                                 dtos::Employee *employee) {
-    std::ostringstream idStream; //para que siga el formato con ceros en el ID
+    std::ostringstream idStream; // para que siga el formato con ceros en el ID
     idStream << std::setfill('0') << std::setw(5) << employee->getID();
     valuesEmployee->push_back(idStream.str());
-    //valuesEmployee->push_back(std::to_string(employee->getID()));
+    // valuesEmployee->push_back(std::to_string(employee->getID()));
     valuesEmployee->push_back(employee->getName());
     valuesEmployee->push_back(employee->getLastName());
     valuesEmployee->push_back(employee->getAddress());
     valuesEmployee->push_back(employee->getPhoneNumber());
-    //para que el salario solo tenga dos decimales.
+    // para que el salario solo tenga dos decimales.
     std::stringstream salaryD;
-    salaryD<<std::fixed<<std::setprecision(2)<<employee->getSalary();
-    std::string salaryWithDecimal =salaryD.str();
+    salaryD << std::fixed << std::setprecision(2) << employee->getSalary();
+    std::string salaryWithDecimal = salaryD.str();
     valuesEmployee->push_back(salaryWithDecimal);
-    //valuesEmployee->push_back(std::to_string(employee->getSalary()));
-    valuesEmployee->push_back(std::string(1,employee->getGender()));
+    // valuesEmployee->push_back(std::to_string(employee->getSalary()));
+    valuesEmployee->push_back(std::string(1, employee->getGender()));
     valuesEmployee->push_back(std::to_string(employee->getBornDay()));
     valuesEmployee->push_back(std::to_string(employee->getBornMonth()));
     valuesEmployee->push_back(std::to_string(employee->getBornYear()));
