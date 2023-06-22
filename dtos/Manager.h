@@ -10,10 +10,13 @@ class Manager : public Employee {
             int bornMonth, int bornYear, std::string branch);
 
     // getters
+    std::string print() override;
+
     std::string getBranch();
 
     // setters
     void setBranch(std::string branch);
+
 
   private:
     std::string branch;

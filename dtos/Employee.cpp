@@ -37,16 +37,28 @@ std::string Employee::print() {
     std::string informationEmployee;
     informationEmployee.append("ID: ")
         .append(std::to_string(this->getID()))
-        .append("Nombre: ")
+        .append(" Nombre: ")
         .append(this->getName())
-        .append("Apellido: ")
+        .append(" Apellido: ")
         .append(this->getLastName())
-        .append("Genero: ")
+        .append(" Genero: ")
         .append(std::to_string(this->getGender()))
-        .append("Direccion: ")
+        .append(" Direccion: ")
         .append(this->getAddress())
-        .append("Telefono: ")
-        .append(this->getPhoneNumber());
+        .append(" Telefono: ")
+        .append(this->getPhoneNumber())
+        .append(" Salario: ")
+        .append(std::to_string(this->getSalary()))
+        .append(" Salario Neto: ")
+        .append(std::to_string(this->getNetSalary()))
+        .append(" Fecha de Nacimiento: ")
+        .append(std::to_string(this->getBornDay()))
+        .append("/")
+        .append(std::to_string(this->getBornMonth()))
+        .append("/")
+        .append(std::to_string(this->getBornYear()));
+
+    return informationEmployee;
 }
 
 // Setters

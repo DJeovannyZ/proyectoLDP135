@@ -17,6 +17,8 @@ class ControllerEmployee {
 
     void printEmployees(std::vector<dtos::Employee> listEmployees);
 
+    std::vector<std::string> getListPathCSV();
+
   private:
     model::ModelEmployee myModel;
 };

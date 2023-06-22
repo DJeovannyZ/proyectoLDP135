@@ -13,6 +13,7 @@ class Supervisor : public Employee {
                std::string departament, std::string teamCharge);
 
   //getters
+  std::string print() override;
   std::string getDepartament();
   std::string getTeamCharge();
 
