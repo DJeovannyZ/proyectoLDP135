@@ -8,7 +8,8 @@
 int main() {
     // model::ModelEmployee model;
     controller::ControllerEmployee myController;
-    myController.SortEmployeesByNetSalary();
+    // myController.SortEmployeesByNetSalary();
+    myController.getNumberEmployeesByType();
 
     // std::vector<dtos::Manager> managers =
     //     model.getListManagers("./dataCSV/Manager.csv");

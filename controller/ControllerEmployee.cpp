@@ -13,6 +13,14 @@ void ControllerEmployee::SortEmployeesByLastName() {
     printEmployees(listEmployeesSorted);
 }
 
+void ControllerEmployee::getNumberEmployeesByType(){
+    std::cout << "Cantidad de Empleados segun sus roles: " << std::endl;
+    std::cout << "Gerentes: " << myModel.getCountEmployees("./dataCSV/Manager.csv") << std::endl;
+    std::cout << "Jefes de Area: " << myModel.getCountEmployees("./dataCSV/AreaManager.csv") << std::endl;;
+    std::cout << "Supervisores: " << myModel.getCountEmployees("./dataCSV/Supervisor.csv") << std::endl;
+    std::cout << "Tecnicos : " << myModel.getCountEmployees("./dataCSV/Technician.csv") << std::endl;
+}
+
 void ControllerEmployee::SortEmployeesByNetSalary() {
     int order;
     std::vector<std::string> listPathCSV = getListPathCSV();
