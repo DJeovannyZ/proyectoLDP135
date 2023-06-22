@@ -20,6 +20,16 @@ class ControllerEmployee {
 
     std::vector<std::string> getListPathCSV();
 
+    void readEmployeeFromConsole(dtos::Employee &employee);
+
+    void readAreaManagerFromConsole();
+
+    void readManagerFromConsole();
+
+    void readSupervisorFromConsole();
+
+    void readTechnicianFromConsole();
+
   private:
     model::ModelEmployee myModel;
 };
