@@ -21,8 +21,7 @@ void ControllerEmployee::getNumberEmployeesByType(){
     std::cout << "Tecnicos : " << myModel.getCountEmployees("./dataCSV/Technician.csv") << std::endl;
 }
 
-void ControllerEmployee::SortEmployeesByNetSalary() {
-    int order;
+void ControllerEmployee::SortEmployeesByNetSalary(int order) {
     std::vector<std::string> listPathCSV = getListPathCSV();
     std::vector<std::shared_ptr<dtos::Employee>> listEmployees =
         myModel.getListEmployees(listPathCSV);
@@ -34,12 +33,6 @@ void ControllerEmployee::SortEmployeesByNetSalary() {
 
     std::vector<std::shared_ptr<dtos::Employee>> listEmployeesSorted;
 
-    do {
-        std::cout << "Elija el tipo de orden: " << std::endl;
-        std::cout << "1. Ascendente " << std::endl;
-        std::cout << "2. Descendente " << std::endl;
-        std::cin >> order;
-    } while (order < 1 || order > 2);
     if (order == 1) {
         listEmployeesSorted = myModel.sortByNetSalary(listEmployees, true);
     } else if (order == 2) {

@@ -11,7 +11,7 @@ class ControllerEmployee {
 
     void SortEmployeesByLastName();
 
-    void SortEmployeesByNetSalary();
+    void SortEmployeesByNetSalary(int order);
 
     void getNumberEmployeesByType();
 
