@@ -18,6 +18,8 @@ public:
 
   void getCountEmployeesByRol();
 
+  void saveEmployeeByRol();
+
   void readCommonAtributtes(std::vector<std::string> *atributtesEmployee);
 
   void readAtributtesManager();
