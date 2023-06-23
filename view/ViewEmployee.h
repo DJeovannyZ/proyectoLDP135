@@ -18,6 +18,16 @@ public:
 
   void getCountEmployeesByRol();
 
+  void readCommonAtributtes(std::vector<std::string> *atributtesEmployee);
+
+  void saveManager();
+
+  void saveAreaManager();
+
+  void saveSupervisor();
+
+  void saveTechnician();
+
 private:
   controller::ControllerEmployee myController;
 };

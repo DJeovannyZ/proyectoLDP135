@@ -5,33 +5,39 @@
 namespace controller {
 class ControllerEmployee {
 
-  public:
-    ControllerEmployee();
-    void saveEmployee();
+public:
+  ControllerEmployee();
+  void saveManager();
 
-    void SortEmployeesByLastName();
+  void saveAreaManager();
 
-    void SortEmployeesByNetSalary(int order);
+  void saveSupervisor();
 
-    void getNumberEmployeesByType();
+  void saveTechnician();
 
-    void
-    printEmployees(std::vector<std::shared_ptr<dtos::Employee>> listEmployees);
+  void SortEmployeesByLastName();
 
-    std::vector<std::string> getListPathCSV();
+  void SortEmployeesByNetSalary(int order);
 
-    void readEmployeeFromConsole(dtos::Employee &employee);
+  void getNumberEmployeesByType();
 
-    void readAreaManagerFromConsole();
+  void
+  printEmployees(std::vector<std::shared_ptr<dtos::Employee>> listEmployees);
 
-    void readManagerFromConsole();
+  std::vector<std::string> getListPathCSV();
 
-    void readSupervisorFromConsole();
+  void readEmployeeFromConsole(dtos::Employee &employee);
 
-    void readTechnicianFromConsole();
+  void readAreaManagerFromConsole();
 
-  private:
-    model::ModelEmployee myModel;
+  void readManagerFromConsole();
+
+  void readSupervisorFromConsole();
+
+  void readTechnicianFromConsole();
+
+private:
+  model::ModelEmployee myModel;
 };
 } // namespace controller
 #endif // CONTROLLEREMPLOYEE_H
