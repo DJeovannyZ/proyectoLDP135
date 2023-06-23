@@ -63,4 +63,60 @@ void ViewEmployee::getCountEmployeesByRol() {
 void ViewEmployee::sortEmployeesByLastName() {
   myController.SortEmployeesByLastName();
 }
+
+void ViewEmployee::readCommonAtributtes(
+    std::vector<std::string> *atributtesEmployee) {
+
+  std::string input;
+
+  std::cout << "ID: ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+
+  std::cout << "Nombre: ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+
+  std::cout << "Apellido: ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+
+  std::cout << "Direccion: ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+
+  std::cout << "Numero de telefono: ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+
+  std::cout << "Salario: ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+
+  std::cout << "Genero (M/F): ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+
+  std::cout << "Dia de nacimiento: ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+
+  std::cout << "Mes de nacimiento: ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+
+  std::cout << "Año de nacimiento: ";
+  std::getline(std::cin, input);
+  atributtesEmployee->push_back(input);
+}
+
+void ViewEmployee::readAtributtesManager() {
+  std::string input;
+  std::vector<std::string> atributtesManager;
+  readCommonAtributtes(&atributtesManager);
+  std::cout << "Sucursal: ";
+  std::getline(std::cin, input);
+  atributtesManager.push_back(input);
+  myController.saveManager(atributtesManager);
+}
 } // namespace view
