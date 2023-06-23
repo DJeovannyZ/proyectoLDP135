@@ -119,4 +119,38 @@ void ViewEmployee::readAtributtesManager() {
   atributtesManager.push_back(input);
   myController.saveManager(atributtesManager);
 }
+
+void ViewEmployee::readAtributtesAreaManager() {
+  std::string input;
+  std::vector<std::string> atributtesAreaManager;
+  readCommonAtributtes(&atributtesAreaManager);
+  std::cout << "Area: ";
+  std::getline(std::cin, input);
+  atributtesAreaManager.push_back(input);
+  myController.saveAreaManager(atributtesAreaManager);
+}
+
+void ViewEmployee::readAtributtesSupervisor() {
+  std::string input;
+  std::vector<std::string> atributtesSupervisor;
+  readCommonAtributtes(&atributtesSupervisor);
+  std::cout << "Departamento: ";
+  std::getline(std::cin, input);
+  atributtesSupervisor.push_back(input);
+  std::cout << "Equipo a cargo: ";
+  std::getline(std::cin, input);
+  atributtesSupervisor.push_back(input);
+  myController.saveSupervisor(atributtesSupervisor);
+}
+
+
+void ViewEmployee::readAtributtesTechnician() {
+  std::string input;
+  std::vector<std::string> atributtesTechnician;
+  readCommonAtributtes(&atributtesTechnician);
+  std::cout << "Especialidad: ";
+  std::getline(std::cin, input);
+  atributtesTechnician.push_back(input);
+  myController.saveTechnician(atributtesTechnician);
+}
 } // namespace view
