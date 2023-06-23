@@ -2,7 +2,7 @@
 
 namespace controller {
 ControllerEmployee::ControllerEmployee() {}
-
+//extrae los datos que fueron ingresados desde la consola
 void ControllerEmployee::saveManager(
     std::vector<std::string> atributtesManager) {
   int ID = std::stoi(atributtesManager[0]);

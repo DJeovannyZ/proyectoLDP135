@@ -16,9 +16,9 @@ Technician::Technician(int ID, std::string name, std::string lastName,
 
 std::string Technician::print() {
     std::string informationTechnician;
-    informationTechnician.append("Tecnico: ")
+    informationTechnician//.append("Tecnico: ")
         .append(Employee::print())
-        .append(" Especializacion: ")
+        .append(", Tecnico en ")
         .append(this->getSpecialization());
     return informationTechnician;
 }

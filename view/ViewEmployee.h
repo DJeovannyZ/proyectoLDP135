@@ -10,6 +10,8 @@ public:
 
   void sortEmployeesByNetSalary();
 
+  void showWelcomeMessage();
+
   void showMainMenu();
 
   void sortEmployeesByLastName();

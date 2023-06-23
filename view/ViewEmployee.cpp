@@ -9,21 +9,41 @@ void ViewEmployee::sortEmployeesByNetSalary() {
     std::cout << "|Elija el tipo de orden: |" << std::endl;
     std::cout << "|1. Ascendente           |" << std::endl;
     std::cout << "|2. Descendente          |" << std::endl;
+    std::cout << "|3. Regresar             |" << std::endl;
     std::cout << "|------------------------|" << std::endl;
+    std::cout << "Opcion: ";
     std::cin >> order;
-  } while (order < 1 || order > 2);
+  } while (order < 1 || order > 3);
+  if (order==1)
+  {
+    std::cout << "Lista de empleados ordenada por Salario Neto de forma ascendente.\n";
+    std::cout << std::endl;
+  } else {
+    if (order==2)
+    {
+      std::cout << "Lista de empleados ordenada por Salario Neto de forma descendente.\n";
+      std::cout << std::endl;
+    } else {
+      showMainMenu();
+    }
+  }
   myController.SortEmployeesByNetSalary(order);
 }
-
-void ViewEmployee::showMainMenu() {
-  std::cout << "Bienvenido al sistema de gestion de Claro El Salvador"
+void ViewEmployee::showWelcomeMessage() {
+  std::cout << "\nBienvenido al sistema de gestion de Claro El Salvador"
             << std::endl;
+  showMainMenu();
+}
+void ViewEmployee::showMainMenu() {
   int option;
   do {
     printMenu();
+    std::cout << "Opcion: ";
     std::cin >> option;
     switch (option) {
     case 1:
+      std::cout << "Lista de empleados ordenada alfabeticamente por apellido.\n";
+      std::cout << std::endl;
       sortEmployeesByLastName();
       break;
     case 2:
@@ -48,7 +68,7 @@ void ViewEmployee::showMainMenu() {
 }
 
 void ViewEmployee::printMenu() {
-  std::cout << "|---------------Menu de Opciones----------------|" << std::endl;
+  std::cout << "\n|---------------Menu de Opciones----------------|" << std::endl;
   std::cout << "|1. Ordenar Empleados por orden alfabetico [A-Z]|" << std::endl;
   std::cout << "|2. Ordenar Empleados por salario Neto          |" << std::endl;
   std::cout << "|3. Mostrar cantidad de Empleados segun su rol  |" << std::endl;
@@ -74,9 +94,11 @@ void ViewEmployee::saveEmployeeByRol() {
     std::cout << "|2. Jefe de Area                  |" << std::endl;
     std::cout << "|3. Supervisor                    |" << std::endl;
     std::cout << "|4. Tecnico                       |" << std::endl;
+    std::cout << "|5. Regresar                      |" << std::endl;
     std::cout << "|---------------------------------|" << std::endl;
+    std::cout << "Opcion: ";
     std::cin >> rol;
-  } while (rol < 1 || rol > 4);
+  } while (rol < 1 || rol > 5);
   switch (rol) {
   case 1:
     readAtributtesManager();
@@ -90,9 +112,16 @@ void ViewEmployee::saveEmployeeByRol() {
   case 4:
     readAtributtesTechnician();
     break;
+  case 5:
+    showMainMenu();
+    break;
+  default:
+      std::cout << "|-------- Opcion Invalida --------|"
+                << std::endl;
+      break;
   }
 }
-
+//Permite ingresar datos desde la terminal
 void ViewEmployee::readCommonAtributtes(
     std::vector<std::string> *atributtesEmployee) {
 

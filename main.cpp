@@ -2,6 +2,6 @@
 
 int main() {
     view::ViewEmployee myView;
-    myView.showMainMenu();
+    myView.showWelcomeMessage();
     return 0;
 }

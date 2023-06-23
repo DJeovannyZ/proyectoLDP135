@@ -17,11 +17,11 @@ Supervisor::Supervisor(int ID, std::string name, std::string lastName,
 // getters
 std::string Supervisor::print() {
     std::string informationSupervisor;
-    informationSupervisor.append("Supervisor: ")
+    informationSupervisor//.append("Supervisor: ")
         .append(Employee::print())
-        .append(" Departamento: ")
+        .append(", Departamento: ")
         .append(this->getDepartament())
-        .append(" Equipo a cargo: ")
+        .append(", Supervisor a cargo de: ")
         .append(this->getTeamCharge());
     return informationSupervisor;
 }

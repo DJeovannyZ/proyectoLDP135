@@ -17,9 +17,9 @@ std::string Manager::getBranch() { return this->branch; }
 
 std::string Manager::print() {
     std::string informationManager;
-    informationManager.append("Gerente: ")
+    informationManager/*.append("Gerente: ")*/
         .append(Employee::print())
-        .append(" Sucursal: ")
+        .append(", Gerente de Sucursal: ")
         .append(this->getBranch());
     return informationManager;
 }

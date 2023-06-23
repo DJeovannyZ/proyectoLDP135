@@ -16,9 +16,9 @@ std::string AreaManager::getArea() { return this->area; }
 
 std::string AreaManager::print() {
     std::string informationAreaManager;
-    informationAreaManager.append("Jefe de Area: ")
+    informationAreaManager/*.append("Jefe de Area: ")*/
         .append(Employee::print())
-        .append(" Area: ")
+        .append(", Jede de Area en: ")
         .append(this->getArea());
     return informationAreaManager;
 }

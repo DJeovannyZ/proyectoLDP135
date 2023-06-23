@@ -142,7 +142,7 @@ ModelEmployee::getListEmployees(std::vector<std::string> listPathCSV) {
     }
     return listEmployees;
 }
-
+//funcion para contar el numero de empleados
 int ModelEmployee::getCountEmployees(std::string pathCSV) {
     int numberEmployees = 0;
     std::string lineTEMP;
@@ -156,7 +156,7 @@ int ModelEmployee::getCountEmployees(std::string pathCSV) {
     }
     return numberEmployees;
 }
-
+//funcion para ordenarr los empleados a partir de se apellido
 std::vector<std::shared_ptr<dtos::Employee>> ModelEmployee::sortByLastName(
     std::vector<std::shared_ptr<dtos::Employee>> listEmployees) {
     std::vector<std::shared_ptr<dtos::Employee>> listEmployeesSorted =
@@ -177,7 +177,7 @@ bool comparateSalariesDescending(const std::shared_ptr<dtos::Employee>& employee
                                  const std::shared_ptr<dtos::Employee>& employee2) {
     return employee->getNetSalary() > employee2->getNetSalary();
 }
-
+//funcion para ordenar a los empleados de acuerdo a su salario neto
 std::vector<std::shared_ptr<dtos::Employee>>
 ModelEmployee::sortByNetSalary(std::vector<std::shared_ptr<dtos::Employee>> listEmployees,
                                bool ascending) {
@@ -191,7 +191,7 @@ ModelEmployee::sortByNetSalary(std::vector<std::shared_ptr<dtos::Employee>> list
     }
     return listEmployeesSorted;
 }
-
+//funcion para calcular la renta
 float ModelEmployee::calculateRent(dtos::Employee employee) {
     float salary = employee.getSalary();
     float salaryRent = 0;
@@ -219,26 +219,26 @@ float ModelEmployee::calculateRent(dtos::Employee employee) {
     }
     return salaryRent;
 }
-
+//funcion para calcular el descuento del AFP
 float ModelEmployee::calculateAFP(dtos::Employee employee) {
     float salary = employee.getSalary();
     float discountAFP = salary * 0.0775;
     return discountAFP;
 }
-
+//Funcion para calcular el descuento del seguro
 float ModelEmployee::calculateISSS(dtos::Employee employee) {
     float salary = employee.getSalary();
     float discountISSS = salary * 0.0750;
     return discountISSS;
 }
-
+//Funcion para calcular el salario Neto
 void ModelEmployee::setNetSalary(std::shared_ptr<dtos::Employee> employee) {
     float netSalary;
     netSalary = employee->getSalary() - calculateRent(*employee) -
                 calculateAFP(*employee) - calculateISSS(*employee);
-    employee->setID(netSalary);
+    employee->setNetSalary(netSalary);
 }
-
+//Funcion base para obtener de lo nuevos empleados y alamacenarlos en un vector de stringd
 void ModelEmployee::addEmployee(std::vector<std::string> *valuesEmployee,
                                 dtos::Employee *employee) {
     std::ostringstream idStream; // para que siga el formato con ceros en el ID
@@ -260,14 +260,11 @@ void ModelEmployee::addEmployee(std::vector<std::string> *valuesEmployee,
     valuesEmployee->push_back(std::to_string(employee->getBornMonth()));
     valuesEmployee->push_back(std::to_string(employee->getBornYear()));
 }
-
+//Funcion para leer cada posicion del vector e irlo almacenando en el archivo .csv
 void ModelEmployee::saveEmployee(std::string pathCSV,
                                  std::vector<std::string> valuesEmployee) {
     std::ofstream outputfileCSV(pathCSV, std::ios::app);
     if (outputfileCSV.is_open()) {
-        // for (const auto &value : valuesEmployee) {
-        //     outputfileCSV << value << ",";
-        // }
         for (int i = 0; i < valuesEmployee.size(); i++) {
             outputfileCSV << valuesEmployee[i];
             // esta validacion es para que no agregue una coma al final de la
@@ -276,6 +273,7 @@ void ModelEmployee::saveEmployee(std::string pathCSV,
                 outputfileCSV << ",";
             }
         }
+        std::cout<<"Los datos fueron guardados correctamente.\n";
         outputfileCSV << "\n";
         outputfileCSV.close();
     } else {
