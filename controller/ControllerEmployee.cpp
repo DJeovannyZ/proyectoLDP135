@@ -142,6 +142,7 @@ void ControllerEmployee::printEmployees(
     std::vector<std::shared_ptr<dtos::Employee>> listEmployees) {
   for (const auto &employee : listEmployees) {
     std::cout << employee->print() << std::endl;
+    std::cout << "\n";
   }
 }
 
