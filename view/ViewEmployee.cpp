@@ -143,7 +143,6 @@ void ViewEmployee::readAtributtesSupervisor() {
   myController.saveSupervisor(atributtesSupervisor);
 }
 
-
 void ViewEmployee::readAtributtesTechnician() {
   std::string input;
   std::vector<std::string> atributtesTechnician;

@@ -7,6 +7,7 @@ class ControllerEmployee {
 
 public:
   ControllerEmployee();
+
   void saveManager(std::vector<std::string> atributtesManager);
 
   void saveAreaManager(std::vector<std::string> atributtesAreaManager);
@@ -25,16 +26,6 @@ public:
   printEmployees(std::vector<std::shared_ptr<dtos::Employee>> listEmployees);
 
   std::vector<std::string> getListPathCSV();
-
-  void readEmployeeFromConsole(dtos::Employee &employee);
-
-  void readAreaManagerFromConsole();
-
-  void readManagerFromConsole();
-
-  void readSupervisorFromConsole();
-
-  void readTechnicianFromConsole();
 
 private:
   model::ModelEmployee myModel;
