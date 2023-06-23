@@ -20,13 +20,13 @@ public:
 
   void readCommonAtributtes(std::vector<std::string> *atributtesEmployee);
 
-  void saveManager();
+  void readAtributtesManager();
 
-  void saveAreaManager();
+  void readAtributtesAreaManager();
 
-  void saveSupervisor();
+  void readAtributtesSupervisor();
 
-  void saveTechnician();
+  void readAtributtesTechnician();
 
 private:
   controller::ControllerEmployee myController;
