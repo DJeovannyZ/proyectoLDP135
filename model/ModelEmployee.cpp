@@ -197,7 +197,7 @@ float ModelEmployee::calculateRent(dtos::Employee employee) {
     float salaryRent = 0;
     float aux = 0;
     if (salary <= 472) {
-        std::cout << "Tramo sin retencion de renta";
+        // std::cout << "Tramo sin retencion de renta";
     } else {
         if ((salary > 472.00) && (salary < 895.25)) {
             aux = (salary - 472.00);

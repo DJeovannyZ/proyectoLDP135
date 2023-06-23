@@ -14,7 +14,7 @@ Este es un proyecto de sistema de gestión de empleados para la empresa Claro. E
 
 El proyecto consiste en un sistema de gestión de empleados para la empresa Claro. El sistema permite realizar diversas operaciones relacionadas con los empleados, como agregar nuevos empleados, ordenar la lista de empleados por diferentes criterios, obtener el número de empleados por tipo, etc.
 
-El proyecto utiliza el paradigma de programación orientada a objetos, por lo que se basa en la creación y manipulación de objetos a través de clases y métodos correspondientes.
+El proyecto utiliza el paradigma de programación orientada a objetos, por lo que se basa en la creación y manipulación de objetos a través de clases y métodos correspondientes, asi como tambien se hace uso de el encapsulamiento, la abstraccion, la herencia y el polimorfismo.
 
 El proyecto sigue el patrón Modelo-Vista-Controlador (MVC), donde el modelo (`ModelEmployee`) maneja la lógica de negocio y el acceso a los datos, la vista (`ViewEmployee`) se encarga de la interacción con el usuario y el controlador (`ControllerEmployee`) actúa como intermediario entre el modelo y la vista, gestionando las acciones del usuario y actualizando el modelo y la vista según sea necesario.
 

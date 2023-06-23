@@ -51,7 +51,7 @@ std::string Employee::print() {
         .append(" Apellido: ")
         .append(this->getLastName())
         .append(" Genero: ")
-        .append(std::to_string(this->getGender()))
+        .append(this->getGender() == 'M' ? "M" : "F")
         .append(" Direccion: ")
         .append(this->getAddress())
         .append(" Telefono: ")
