@@ -7,13 +7,13 @@ class ControllerEmployee {
 
 public:
   ControllerEmployee();
-  void saveManager();
+  void saveManager(std::vector<std::string> atributtesManager);
 
-  void saveAreaManager();
+  void saveAreaManager(std::vector<std::string> atributtesAreaManager);
 
-  void saveSupervisor();
+  void saveSupervisor(std::vector<std::string> atributtesSupervisor);
 
-  void saveTechnician();
+  void saveTechnician(std::vector<std::string> atributtesTechnician);
 
   void SortEmployeesByLastName();
 
