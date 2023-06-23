@@ -34,8 +34,18 @@ int Employee::getBornYear() { return this->bornYear; }
 
 std::string Employee::print() {
     std::string informationEmployee;
+    std::stringstream ss, ss1;
+    ss << std::fixed << std::setprecision(2);
+    ss1 << std::fixed << std::setprecision(2);
+    ss << this->getSalary();
+    ss1 << this->getNetSalary();
+    std::string SalaryStr = ss.str();
+    std::string netSalaryStr = ss1.str();
+    std::ostringstream os;
+    os<<std::setfill('0')<<std::setw(5)<<this->getID();
+
     informationEmployee.append("ID: ")
-        .append(std::to_string(this->getID()))
+        .append(os.str())
         .append(" Nombre: ")
         .append(this->getName())
         .append(" Apellido: ")
@@ -47,9 +57,9 @@ std::string Employee::print() {
         .append(" Telefono: ")
         .append(this->getPhoneNumber())
         .append(" Salario: ")
-        .append(std::to_string(this->getSalary()))
+        .append(SalaryStr)
         .append(" Salario Neto: ")
-        .append(std::to_string(this->getNetSalary()))
+        .append(netSalaryStr)
         .append(" Fecha de Nacimiento: ")
         .append(std::to_string(this->getBornDay()))
         .append("/")

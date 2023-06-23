@@ -236,7 +236,7 @@ void ModelEmployee::setNetSalary(std::shared_ptr<dtos::Employee> employee) {
     float netSalary;
     netSalary = employee->getSalary() - calculateRent(*employee) -
                 calculateAFP(*employee) - calculateISSS(*employee);
-    employee->setNetSalary(netSalary);
+    employee->setID(netSalary);
 }
 
 void ModelEmployee::addEmployee(std::vector<std::string> *valuesEmployee,

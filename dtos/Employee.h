@@ -2,6 +2,8 @@
 #define EMPLOYEE_H
 
 #include <string>
+#include <iomanip>
+#include <sstream>
 
 namespace dtos {
 class Employee {
