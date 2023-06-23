@@ -97,7 +97,7 @@ void ViewEmployee::readCommonAtributtes(
     std::vector<std::string> *atributtesEmployee) {
 
   std::string input;
-    std::cin.ignore();
+  std::cin.ignore();
 
   std::cout << "ID: ";
   std::getline(std::cin, input);
@@ -143,6 +143,7 @@ void ViewEmployee::readCommonAtributtes(
 void ViewEmployee::readAtributtesManager() {
   std::string input;
   std::vector<std::string> atributtesManager;
+  std::cout << "Ingrese los datos del nuevo Gerente: " << std::endl;
   readCommonAtributtes(&atributtesManager);
   std::cout << "Sucursal: ";
   std::getline(std::cin, input);
@@ -153,6 +154,7 @@ void ViewEmployee::readAtributtesManager() {
 void ViewEmployee::readAtributtesAreaManager() {
   std::string input;
   std::vector<std::string> atributtesAreaManager;
+  std::cout << "Ingrese los datos del nuevo Jefe de Area: " << std::endl;
   readCommonAtributtes(&atributtesAreaManager);
   std::cout << "Area: ";
   std::getline(std::cin, input);
@@ -163,6 +165,7 @@ void ViewEmployee::readAtributtesAreaManager() {
 void ViewEmployee::readAtributtesSupervisor() {
   std::string input;
   std::vector<std::string> atributtesSupervisor;
+  std::cout << "Ingrese los datos del nuevo Supervisor: " << std::endl;
   readCommonAtributtes(&atributtesSupervisor);
   std::cout << "Departamento: ";
   std::getline(std::cin, input);
@@ -176,6 +179,7 @@ void ViewEmployee::readAtributtesSupervisor() {
 void ViewEmployee::readAtributtesTechnician() {
   std::string input;
   std::vector<std::string> atributtesTechnician;
+  std::cout << "Ingrese los datos del nuevo Tecnico: " << std::endl;
   readCommonAtributtes(&atributtesTechnician);
   std::cout << "Especialidad: ";
   std::getline(std::cin, input);
