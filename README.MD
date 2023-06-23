@@ -1,36 +1,14 @@
+# Proyecto de Asignatura LDP135
+
+## Integrantes
+- Reyna Guadalupe Miranda Rivas
+- Darwin Geovanny Zaldaña Avila
+
+En este proyecto, hemos trabajado juntos en la asignatura LDP135 para desarrollar una solución al problema planteado.
+
 # Sistema de Gestión de Empleados de la Empresa Claro
 
-Este es un proyecto de sistema de gestión de empleados para la empresa Claro. El proyecto sigue una arquitectura Modelo-Vista-Controlador (MVC) y utiliza el patrón de Objetos de Transferencia de Datos (DTOs). El código fuente está estructurado de la siguiente manera:
-├── commandCompile.txt
-├── controller
-│ ├── ControllerEmployee.cpp
-│ └── ControllerEmployee.h
-├── dataCSV
-│ ├── AreaManager.csv
-│ ├── Manager.csv
-│ ├── Supervisor.csv
-│ └── Technician.csv
-├── dtos
-│ ├── AreaManager.cpp
-│ ├── AreaManager.h
-│ ├── Employee.cpp
-│ ├── Employee.h
-│ ├── Manager.cpp
-│ ├── Manager.h
-│ ├── Supervisor.cpp
-│ ├── Supervisor.h
-│ ├── Technician.cpp
-│ └── Technician.h
-├── indicaciones.txt
-├── main.cpp
-├── main.exe
-├── model
-│ ├── ModelEmployee.cpp
-│ └── ModelEmployee.h
-└── view
-├── ViewEmployee.cpp
-└── ViewEmployee.h
-
+Este es un proyecto de sistema de gestión de empleados para la empresa Claro. El proyecto sigue una arquitectura Modelo-Vista-Controlador (MVC) y utiliza el patrón de Objetos de Transferencia de Datos (DTOs).
 
 ## Descripción del Proyecto
 
@@ -72,6 +50,6 @@ El sistema de gestión de empleados ofrece las siguientes funcionalidades:
 - Obtener el número de empleados por tipo (Manager, AreaManager, Supervisor, Technician).
 - Mostrar la lista de empleados.
 
-Para utilizar el sistema, ejecuta el archivo `main.exe`. Esto iniciará el programa y mostrará un menú de opciones. Sigue las instrucciones en pantalla para realizar las diferentes operaciones.
+Para utilizar el sistema, se puede compilar el proyecto usando los comandos dentro del archivo commandCompile.txt y ejecutando el archivo `main.exe` en windows o `main` en linux. Esto iniciará el programa y mostrará un menú de opciones. Sigue las instrucciones en pantalla para realizar las diferentes operaciones.
 
 
