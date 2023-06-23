@@ -7,8 +7,8 @@ g++ main.cpp \
     dtos/Supervisor.cpp \
     dtos/Technician.cpp \
     controller/ControllerEmployee.cpp \
-    view/view.cpp \
+    view/ViewEmployee.cpp \
     -o main
 
 #WIndows: 
-g++ main.cpp model/ModelEmployee.cpp dtos/Employee.cpp dtos/Manager.cpp dtos/AreaManager.cpp dtos/Supervisor.cpp dtos/Technician.cpp controller/ControllerEmployee.cpp view/view.cpp -o main.exe
+g++ main.cpp model/ModelEmployee.cpp dtos/Employee.cpp dtos/Manager.cpp dtos/AreaManager.cpp dtos/Supervisor.cpp dtos/Technician.cpp controller/ControllerEmployee.cpp view/ViewEmployee.cpp -o main.exe

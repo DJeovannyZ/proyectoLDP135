@@ -6,6 +6,8 @@
 namespace view {
 class ViewEmployee {
 public:
+  void printMenu();
+
   void sortEmployeesByNetSalary();
 
   void showMainMenu();
