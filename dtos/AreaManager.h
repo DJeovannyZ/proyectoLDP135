@@ -15,9 +15,9 @@ class AreaManager : public Employee {
     // setters
     void setArea(std::string area);
 
-    // getters
     std::string print() override;
-
+    
+     // getters
     std::string getArea();
 
   private:

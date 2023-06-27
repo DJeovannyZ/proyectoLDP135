@@ -24,7 +24,7 @@ void ViewEmployee::sortEmployeesByNetSalary() {
       std::cout << "Lista de empleados ordenada por Salario Neto de forma descendente.\n";
       std::cout << std::endl;
     } else {
-      showMainMenu();
+      return;
     }
   }
   myController.SortEmployeesByNetSalary(order);
@@ -35,7 +35,7 @@ void ViewEmployee::showWelcomeMessage() {
   showMainMenu();
 }
 void ViewEmployee::showMainMenu() {
-  int option;
+  int option=0;
   do {
     printMenu();
     std::cout << "Opcion: ";
@@ -58,7 +58,7 @@ void ViewEmployee::showMainMenu() {
     case 5:
       std::cout << "|-------------------Saliendo--------------------|"
                 << std::endl;
-      break;
+      break;;
     default:
       std::cout << "|--------------- Opcion Invalida----------------|"
                 << std::endl;
@@ -86,7 +86,7 @@ void ViewEmployee::sortEmployeesByLastName() {
 }
 
 void ViewEmployee::saveEmployeeByRol() {
-  int rol;
+  int rol=0;
   do {
     std::cout << "|---------------------------------|" << std::endl;
     std::cout << "|Elija el rol del nuevo Empleado: |" << std::endl;
@@ -98,28 +98,28 @@ void ViewEmployee::saveEmployeeByRol() {
     std::cout << "|---------------------------------|" << std::endl;
     std::cout << "Opcion: ";
     std::cin >> rol;
-  } while (rol < 1 || rol > 5);
-  switch (rol) {
-  case 1:
-    readAtributtesManager();
-    break;
-  case 2:
-    readAtributtesAreaManager();
-    break;
-  case 3:
-    readAtributtesSupervisor();
-    break;
-  case 4:
-    readAtributtesTechnician();
-    break;
-  case 5:
-    showMainMenu();
-    break;
-  default:
-      std::cout << "|-------- Opcion Invalida --------|"
-                << std::endl;
+    switch (rol) {
+    case 1:
+      readAtributtesManager();
       break;
-  }
+    case 2:
+      readAtributtesAreaManager();
+      break;
+    case 3:
+      readAtributtesSupervisor();
+      break;
+    case 4:
+      readAtributtesTechnician();
+      break;
+    case 5:
+      return;
+      break;
+    default:
+        std::cout << "|-------- Opcion Invalida --------|"
+                  << std::endl;
+        break;
+    }
+  } while (rol < 1 || rol > 5);
 }
 //Permite ingresar datos desde la terminal
 void ViewEmployee::readCommonAtributtes(
